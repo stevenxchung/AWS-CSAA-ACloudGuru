@@ -147,3 +147,20 @@ This section will cover a top-level overview on the AWS services tested in the S
 
 ### Game Development
 * GameLift - Service to help develop games in the AWS cloud
+
+## Quiz
+
+** 1. What is an AWS region? **
+A region is a geographic area that consists of different AZ's. Each region has at least two AZ's.
+
+** 2. What does an AWS region consist of? **
+An independent collection of AWS computing resources in a defined geography.
+
+** 3. Which statement best describes AZ's? **
+Distinct locations from within an AWS region that are engineered to be isolated form failures.
+
+** 4. An AWS VPC is a component of which AWS service? **
+Networking Service
+
+** 5. What is a VPC? **
+Virtual Private Cloud
