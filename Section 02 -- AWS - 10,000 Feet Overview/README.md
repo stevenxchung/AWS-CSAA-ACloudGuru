@@ -41,7 +41,7 @@ This section will cover a top-level overview on the AWS services tested in the S
 ### Networking & Content Delivery
 * VPC (Virtual Private Cloud) - Essentially a virtual data center where we can configure things such as firewalls, AZ's, etc.
 * CloudFront - Stores information closer to the users
-* Route53 - Amazon's DNS service
+* Route 53 - Amazon's DNS service which is highly scaleable
 * API Gateway - Is a way of creating our own APIs for our services to talk to
 * Direct Connect - A way of running a dedicated line from a data center into Amazon which will directly connect into a VPC
 
@@ -164,3 +164,18 @@ Networking Service
 
 ** 5. What is a VPC? **
 Virtual Private Cloud
+
+** 6. Which AWS service is specifically designed to run a developer's code on an infrastructure that is automatically provisioned to host that code? **
+Elastic Beanstalk
+
+** 7. Which AWS service allows you to run code without having to worry about provisioning any underlying resources (such as virtual machines, databases, etc.) **
+Lambda
+
+** 8. Amazon's highly scaleable DNS service is known as ________. **
+Route 53
+
+** 9. Which AWS compute service is specifically designed to assist you in processing large data sets? **
+Elastic Map Reduce
+
+** 10. What is the difference between Elastic Beanstalk & CloudFormation? **
+Elastic Beanstalk automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring based on the code you upload to it, where as CloudFormation is an automated provisioning engine designed to deploy entire cloud environments via a JSON script.
