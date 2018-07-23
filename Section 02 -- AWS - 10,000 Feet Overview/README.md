@@ -29,7 +29,7 @@ This section will cover a top-level overview on the AWS services tested in the S
 * RDS (Relational Database Service) - Service which works with MySQL, PostgreSQL, Oracle
 * DynamoDB - For non-relational databases
 * ElastiCache - A way of caching commonly queried items from a database
-* Red Shift - Built for data warehousing
+* Redshift - Built for data warehousing
 
 ### Migration Services
 * AWS Migration Hub - Tracking service which allows application tracking during migration
@@ -40,7 +40,7 @@ This section will cover a top-level overview on the AWS services tested in the S
 
 ### Networking & Content Delivery
 * VPC (Virtual Private Cloud) - Essentially a virtual data center where we can configure things such as firewalls, AZ's, etc.
-* CloudFront - Stores information closer to the users
+* CloudFront - Stores information closer to the users and uses a CDN to distribute content on a global scale
 * Route 53 - Amazon's DNS service which is highly scaleable
 * API Gateway - Is a way of creating our own APIs for our services to talk to
 * Direct Connect - A way of running a dedicated line from a data center into Amazon which will directly connect into a VPC
@@ -179,3 +179,18 @@ Elastic Map Reduce
 
 ** 10. What is the difference between Elastic Beanstalk & CloudFormation? **
 Elastic Beanstalk automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring based on the code you upload to it, where as CloudFormation is an automated provisioning engine designed to deploy entire cloud environments via a JSON script.
+
+** 11. Which AWS service uses a CDN to distribute content around the world? **
+CloudFront
+
+** 12. Which of the following AWS solutions offers durable, available storage for flat files? **
+S3
+
+** 13. Which of the following AWS services would be the best choice for long term data archival? **
+Glacier
+
+** 14. Which AWS service offers the following database engines: SQL, MySQL, MariaDB, PostgreSQL, Aurora, and Oracle? **
+RDS
+
+** 15. Which of the following AWS services is used primarily for data warehousing? **
+Redshift
