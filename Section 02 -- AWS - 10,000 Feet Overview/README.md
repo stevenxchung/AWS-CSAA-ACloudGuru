@@ -194,3 +194,18 @@ RDS
 
 ** 15. Which of the following AWS services is used primarily for data warehousing? **
 Redshift
+
+** 16. Which AWS service is used for collating large amounts of data streamed from multiple sources? **
+Kinesis
+
+** 17. You need to add users to your AWS account and set password rotation policies for these new users. Which AWS service would best fit your requirements? **
+IAM
+
+** 18. You need to supply auditors with logs detailing the individual users that provision specific resources on your AWS platform. Which service would best meet this need? **
+CloudTrail
+
+** 19. You need a configuration management service that enables your system administrators to configure and operate your web applications using Chef. Which AWS service would best suit your needs? **
+Opsworks
+
+** 20. Your digital media agency needs to convert their media files in to different formats to suit different devices. Which AWS service should you consider using to meet these needs? **
+Elastic Transcoder
