@@ -1,6 +1,6 @@
 # Section 2: AWS - 10,000 Feet Overview
 
-This section will cover a top-level overview on the AWS services tested in the Solutions Architect exam
+This section will cover a top-level overview on the AWS services tested in the Solutions Architect exam.
 
 * AWS officially launched in 2006
 * By the numbers, AWS services have grown from 82 in 2011 to over 1300+ in 2017
@@ -127,7 +127,7 @@ This section will cover a top-level overview on the AWS services tested in the S
 
 ### Customer Engagement
 * Connect - Essentially is a call center in the cloud
-* Simple Email Service - Very scalable service which helps send emails to customers
+* Simple Email Service - Very scaleable service which helps send emails to customers
 
 ### Business Productivity
 * Alexa For Business - Can use for a variety of business services and tasks
