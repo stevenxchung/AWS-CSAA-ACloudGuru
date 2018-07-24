@@ -2,7 +2,7 @@ This repo will house coursework from the AWS training class from A Cloud Guru fo
 
 # Section 2: AWS - 10,000 Feet Overview
 
-This section will cover a top-level overview on the AWS services tested in the Solutions Architect exam
+This section will cover a top-level overview on the AWS services tested in the Solutions Architect exam.
 
 * AWS officially launched in 2006
 * By the numbers, AWS services have grown from 82 in 2011 to over 1300+ in 2017
@@ -31,7 +31,7 @@ This section will cover a top-level overview on the AWS services tested in the S
 * RDS (Relational Database Service) - Service which works with MySQL, PostgreSQL, Oracle
 * DynamoDB - For non-relational databases
 * ElastiCache - A way of caching commonly queried items from a database
-* Red Shift - Built for data warehousing
+* Redshift - Built for data warehousing
 
 ### Migration Services
 * AWS Migration Hub - Tracking service which allows application tracking during migration
@@ -42,8 +42,8 @@ This section will cover a top-level overview on the AWS services tested in the S
 
 ### Networking & Content Delivery
 * VPC (Virtual Private Cloud) - Essentially a virtual data center where we can configure things such as firewalls, AZ's, etc.
-* CloudFront - Stores information closer to the users
-* Route53 - Amazon's DNS service
+* CloudFront - Stores information closer to the users and uses a CDN to distribute content on a global scale
+* Route 53 - Amazon's DNS service which is highly scaleable
 * API Gateway - Is a way of creating our own APIs for our services to talk to
 * Direct Connect - A way of running a dedicated line from a data center into Amazon which will directly connect into a VPC
 
@@ -129,7 +129,7 @@ This section will cover a top-level overview on the AWS services tested in the S
 
 ### Customer Engagement
 * Connect - Essentially is a call center in the cloud
-* Simple Email Service - Very scalable service which helps send emails to customers
+* Simple Email Service - Very scaleable service which helps send emails to customers
 
 ### Business Productivity
 * Alexa For Business - Can use for a variety of business services and tasks
@@ -149,4 +149,70 @@ This section will cover a top-level overview on the AWS services tested in the S
 
 ### Game Development
 * GameLift - Service to help develop games in the AWS cloud
+
+## Quiz
+
+** 1. What is an AWS region? **
+A region is a geographic area that consists of different AZ's. Each region has at least two AZ's.
+
+** 2. What does an AWS region consist of? **
+An independent collection of AWS computing resources in a defined geography.
+
+** 3. Which statement best describes AZ's? **
+Distinct locations from within an AWS region that are engineered to be isolated form failures.
+
+** 4. An AWS VPC is a component of which AWS service? **
+Networking Service
+
+** 5. What is a VPC? **
+Virtual Private Cloud
+
+** 6. Which AWS service is specifically designed to run a developer's code on an infrastructure that is automatically provisioned to host that code? **
+Elastic Beanstalk
+
+** 7. Which AWS service allows you to run code without having to worry about provisioning any underlying resources (such as virtual machines, databases, etc.) **
+Lambda
+
+** 8. Amazon's highly scaleable DNS service is known as ________. **
+Route 53
+
+** 9. Which AWS compute service is specifically designed to assist you in processing large data sets? **
+Elastic Map Reduce
+
+** 10. What is the difference between Elastic Beanstalk & CloudFormation? **
+Elastic Beanstalk automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring based on the code you upload to it, where as CloudFormation is an automated provisioning engine designed to deploy entire cloud environments via a JSON script.
+
+** 11. Which AWS service uses a CDN to distribute content around the world? **
+CloudFront
+
+** 12. Which of the following AWS solutions offers durable, available storage for flat files? **
+S3
+
+** 13. Which of the following AWS services would be the best choice for long term data archival? **
+Glacier
+
+** 14. Which AWS service offers the following database engines: SQL, MySQL, MariaDB, PostgreSQL, Aurora, and Oracle? **
+RDS
+
+** 15. Which of the following AWS services is used primarily for data warehousing? **
+Redshift
+
+** 16. Which AWS service is used for collating large amounts of data streamed from multiple sources? **
+Kinesis
+
+** 17. You need to add users to your AWS account and set password rotation policies for these new users. Which AWS service would best fit your requirements? **
+IAM
+
+** 18. You need to supply auditors with logs detailing the individual users that provision specific resources on your AWS platform. Which service would best meet this need? **
+CloudTrail
+
+** 19. You need a configuration management service that enables your system administrators to configure and operate your web applications using Chef. Which AWS service would best suit your needs? **
+Opsworks
+
+** 20. Your digital media agency needs to convert their media files in to different formats to suit different devices. Which AWS service should you consider using to meet these needs? **
+Elastic Transcoder
+
+---
+
+# Section 3: Identity Access Management (IAM)
 
