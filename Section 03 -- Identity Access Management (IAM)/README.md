@@ -17,3 +17,13 @@ This section will cover an in-depth overview on the IAM service.
 * Groups - A collection of users under one set of permissions
 * Roles - You create roles and can then assign them to AWS resources
 * Policies - A document that defines one (or more permissions)
+
+### IAM - Lab
+* IAM does not have a region as it is global
+Steps to set up IAM on AWS are as follows:
+ 1. Delete root access keys
+ 2. Activate MFA on root account
+ 3. Create individual IAM users
+ 4. Use groups to assign permissions
+ 5. Apply an IAM password policy
+* IAM roles are a secure way to grant permissions to entities that you trust.
