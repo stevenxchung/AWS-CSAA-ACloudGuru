@@ -28,5 +28,5 @@ Objects consist of the following:
  * Version ID (important for versioning)
  * Metadata (Data about data your are storing)
  * Subresources:
-  * Access Control Lists
-  * Torrent
+    * Access Control Lists
+    * Torrent
