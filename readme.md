@@ -153,7 +153,7 @@ This section will cover a top-level overview on the AWS services tested in the S
 ## Section 2 Quiz
 
 ** 1. What is an AWS region? **
-A region is a geographic area that consists of different AZ's. Each region has at least two AZ's.
+* A region is a geographic area that consists of different AZ's. Each region has at least two AZ's.
 
 ** 2. What does an AWS region consist of? **
 An independent collection of AWS computing resources in a defined geography.
