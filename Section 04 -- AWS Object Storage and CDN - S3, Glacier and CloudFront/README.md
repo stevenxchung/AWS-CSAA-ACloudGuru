@@ -66,7 +66,7 @@ AWS S3 Transfer Acceleration enables fast, easy, and secure transfers of files o
 ### Create and S3 Bucket - Exam Tips
 * Buckets are a universal name space
 * Upload an object to S3 receives a HTTP 200 code on success
-* S3, S3-IA, S3 Reduced Reduandancy Storage
+* S3, S3-IA, S3 Reduced Redundancy Storage
 * Encryption
   * Client Side Encryption
   * Server Side Encryption
@@ -89,7 +89,7 @@ AWS S3 Transfer Acceleration enables fast, easy, and secure transfers of files o
 * Files in an existing bucket are not replicated automatically. All subsequent updated files will be replicated automatically
 * You cannot replicate to multiple buckets or use daisy chaining
 * Delete markers are replicated
-* Deleteing individual versions or delete markers will not be replicated
+* Deleting individual versions or delete markers will not be replicated
 * Understand what Cross Region Replication is at a high level
 
 ### S3 - Lifecycle Management Lab
@@ -119,7 +119,7 @@ Amazon CloudFront is optimized to work with other services such as S3, EC2, Elas
 
 ### CloudFont - Exam Tips
 * Understand the key terms: Edge Location, Origin, Distribution, Web Distribution, and RTMP
-* Edge locations are not just READ only, your can write to them too
+* Edge locations are not just READ only, you can write to them too
 * Objects are cached for the life of the TTL (time to live)
 * You can clear cached objects but you will be charged
 
@@ -128,7 +128,7 @@ Amazon CloudFront is optimized to work with other services such as S3, EC2, Elas
 * You can setup access control to your buckets using:
   * Bucket Policies
   * Access Control Lists
-* S3 buckets can be configured to create access logs which log all requrests made to the S3 bucket. This can be done to another bucket
+* S3 buckets can be configured to create access logs which log all requests made to the S3 bucket. This can be done to another bucket
 
 ### Encryption
 There are four types of Encryption for S3:
@@ -142,7 +142,7 @@ There are four types of Encryption for S3:
   * Client Side Encryption
 
 ### Storage Gateway
-AWS Storage Gateway is a service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration bewteen an organization's on-premises IT environment and AWS's storage infrastructure. The service enables your to securely store data to the AWS cloud for scalable and cost-effective storage.
+AWS Storage Gateway is a service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure. The service enables you to securely store data to the AWS cloud for scalable and cost-effective storage.
 
 AWS Storage Gateway's software appliance is available for download as a VM (virtual machine) image that you install on a host in your data center. Storage Gateway supports either VMware ESXi or Microsoft Hyper-V. Once you've installed your gateway and associated it with your AWS account through the activation process, you can use the AWS Management Console to create the storage gateway option that is right for you.
 
@@ -177,7 +177,7 @@ Stored volumes let your primary data locally, while asynchronously backing up th
 </div>
 
 ### Volume Gateway - Cached Volumes
-Cached volumes let you use S3 as your primary data storage while retaining frequently access data locally in your storage gateway. Cached volumes minimize the need to scale your on-premises storage infrastructure, while still providing your applications with low-latency access to their frequenty accessed data. You can create storage vollumes up to 32 TiB in size and attached to them as iSCSI devices from your on-premises application servers. Your gateway stores data that you write to these volumes in S3 and retains recently read data in your on-premises storage gateway's cache and upload buffer storage. 1 GB - 32 TB in size for Cache Volumes
+Cached volumes let you use S3 as your primary data storage while retaining frequently access data locally in your storage gateway. Cached volumes minimize the need to scale your on-premises storage infrastructure, while still providing your applications with low-latency access to their frequently accessed data. You can create storage volumes up to 32 TB in size and attached to them as iSCSI devices from your on-premises application servers. Your gateway stores data that you write to these volumes in S3 and retains recently read data in your on-premises storage gateway's cache and upload buffer storage. 1 GB - 32 TB in size for Cache Volumes
 
 <div align="center">
   <img src="volume-gateway-cached-volumes.jpg">
@@ -185,7 +185,7 @@ Cached volumes let you use S3 as your primary data storage while retaining frequ
 </div>
 
 ### Volume Gateway - Tape Gateway
-Tape Gateway offers a durable, cost-effective solution to archive your data in the AWS Cloud. The VTL interface it provides lets your leverage your existing tape-based backup application infrasture to store data on virtual tape cartridges that you create on your tape gateway. Each tape gateway is preconfigured with a media changer and tape drives, which are available to your existing client backup applications as ISCSI devices. You add tape cartridges as your need to archive your data. Supported by NetBackup, Backup Exec, Veeam etc.
+Tape Gateway offers a durable, cost-effective solution to archive your data in the AWS Cloud. The VTL interface it provides lets your leverage your existing tape-based backup application infrastructure to store data on virtual tape cartridges that you create on your tape gateway. Each tape gateway is preconfigured with a media changer and tape drives, which are available to your existing client backup applications as ISCSI devices. You add tape cartridges as your need to archive your data. Supported by NetBackup, Backup Exec, Veeam etc.
 
 <div align="center">
   <img src="volume-gateway-tape-gateway.jpg">
@@ -196,6 +196,6 @@ Tape Gateway offers a durable, cost-effective solution to archive your data in t
 * File Gateway - For flat files, stored directly on S3
 * Volume Gateway:
   * Stored Volumes - Entire dataset is stored on site and is asynchronously backed up to S3
-  * Cached Volumes - Entire dataset is sotred on S3 and the most frequently accessed data is cached on site
+  * Cached Volumes - Entire dataset is stored on S3 and the most frequently accessed data is cached on site
 * Gateway Virtual Tape Library (VTL)
   * Used for backup and uses popular backup applications like NetBackup, Backup Exec, Veeam etc.
