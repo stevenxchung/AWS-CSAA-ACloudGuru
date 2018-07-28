@@ -153,64 +153,64 @@ This section will cover a top-level overview on the AWS services tested in the S
 ## Section 2 Quiz
 
 **1. What is an AWS region?**
-A region is a geographic area that consists of different AZ's. Each region has at least two AZ's.
+* A region is a geographic area that consists of different AZ's. Each region has at least two AZ's.
 
 **2. What does an AWS region consist of?**
-An independent collection of AWS computing resources in a defined geography.
+* An independent collection of AWS computing resources in a defined geography.
 
 **3. Which statement best describes AZ's?**
-Distinct locations from within an AWS region that are engineered to be isolated form failures.
+* Distinct locations from within an AWS region that are engineered to be isolated form failures.
 
 **4. An AWS VPC is a component of which AWS service?**
-Networking Service
+* Networking Service
 
 **5. What is a VPC?**
-Virtual Private Cloud
+* Virtual Private Cloud
 
 **6. Which AWS service is specifically designed to run a developer's code on an infrastructure that is automatically provisioned to host that code?**
-Elastic Beanstalk
+* Elastic Beanstalk
 
 **7. Which AWS service allows you to run code without having to worry about provisioning any underlying resources (such as virtual machines, databases, etc.)**
-Lambda
+* Lambda
 
 **8. Amazon's highly scaleable DNS service is known as ________.**
-Route 53
+* Route 53
 
 **9. Which AWS compute service is specifically designed to assist you in processing large data sets?**
-Elastic Map Reduce
+* Elastic Map Reduce
 
 **10. What is the difference between Elastic Beanstalk & CloudFormation?**
-Elastic Beanstalk automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring based on the code you upload to it, where as CloudFormation is an automated provisioning engine designed to deploy entire cloud environments via a JSON script.
+* Elastic Beanstalk automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring based on the code you upload to it, where as CloudFormation is an automated provisioning engine designed to deploy entire cloud environments via a JSON script.
 
 **11. Which AWS service uses a CDN to distribute content around the world?**
-CloudFront
+* CloudFront
 
 **12. Which of the following AWS solutions offers durable, available storage for flat files?**
-S3
+* S3
 
 **13. Which of the following AWS services would be the best choice for long term data archival?**
-Glacier
+* Glacier
 
 **14. Which AWS service offers the following database engines: SQL, MySQL, MariaDB, PostgreSQL, Aurora, and Oracle?**
-RDS
+* RDS
 
 **15. Which of the following AWS services is used primarily for data warehousing?**
-Redshift
+* Redshift
 
 **16. Which AWS service is used for collating large amounts of data streamed from multiple sources?**
-Kinesis
+* Kinesis
 
 **17. You need to add users to your AWS account and set password rotation policies for these new users. Which AWS service would best fit your requirements?**
-IAM
+* IAM
 
 **18. You need to supply auditors with logs detailing the individual users that provision specific resources on your AWS platform. Which service would best meet this need?**
-CloudTrail
+* CloudTrail
 
 **19. You need a configuration management service that enables your system administrators to configure and operate your web applications using Chef. Which AWS service would best suit your needs?**
-Opsworks
+* Opsworks
 
 **20. Your digital media agency needs to convert their media files in to different formats to suit different devices. Which AWS service should you consider using to meet these needs?**
-Elastic Transcoder
+* Elastic Transcoder
 
 ---
 
