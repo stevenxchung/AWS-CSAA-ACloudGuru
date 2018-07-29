@@ -34,7 +34,7 @@ Objects consist of the following:
 ### S3 - The Basics (Continued)
 * Built for 99.99% availability for the S3 platform.
 * Amazon guarantee 99.9% availability
-* Amazon guarantee 99.99999999999% durability for S3 information (11 x 9s)
+* Amazon guarantee 99.999999999% durability for S3 information (11 x 9s)
 * Tiered storage available
 * Lifecycle Management
 * Versioning
@@ -42,7 +42,7 @@ Objects consist of the following:
 * Secure your data using Access Control Lists and Bucket Policies
 
 ### S3 - Storage Tiers/Classes
-* S3 Standard: 99.99% availability, 99.9999999999% durability, stored redundantly across multiple devices in multiple facilities, and is designed to sustain the loss of 2 facilities concurrently
+* S3 Standard: 99.99% availability, 99.999999999% durability, stored redundantly across multiple devices in multiple facilities, and is designed to sustain the loss of 2 facilities concurrently
 * S3 - IA: (Infrequently Accessed): For data that is accessed less frequently, but requires rapid access when needed. Lower fee than S3 but you are charged a retrieval fee
 * S3 One Zone - IA: Want a lower-cost option for infrequently accessed data but do not require the multiple AZ data resilience
 * Glacier: Very cheap but used for archival only. Expedited, Standard or Bulk. A standard retrieval time takes 3-5 hours
@@ -199,3 +199,192 @@ Tape Gateway offers a durable, cost-effective solution to archive your data in t
   * Cached Volumes - Entire dataset is stored on S3 and the most frequently accessed data is cached on site
 * Gateway Virtual Tape Library (VTL)
   * Used for backup and uses popular backup applications like NetBackup, Backup Exec, Veeam etc.
+
+### Import/Export Disk
+AWS Import/Export Disk accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport. AWS Import/Export Disk transfers your data directly onto and off of storage devices using Amazon's high-speed internal network and bypassing the Internet.
+
+### Types of Snowballs
+* Snowball
+* Snowball Edge
+* Snowmobile
+
+### Snowball
+* Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of AWS. Using Snowball addresses common challenges with large-scale data transfers including high network costs, long transfer times, and security concerns. Transferring data with Snowball is simple, fast, secure, and can be as little as one-fifth the cost of high-speed Internet.
+
+80 TB snowball in all regions. Snowball uses multiple layers of security designed to protect your data including tamper-resistant enclosures, 256-bit encryption, and an industry-standard Trusted Platform Module (TPM) designed to ensure both security and full chain-of-custody of your data. Once the data transfer job has been processed and verified, AWS performs a software erasure of the Snowball appliance.
+
+### Snowball Edge
+AWS Snowball Edge is a 100 TB data transfer device with on-board storage and compute capabilities. You can use Snowball Edge to move large amounts of data into and out of AWS, as a temporary storage tier for large local datasets, or to support local workloads in remote or offline locations.
+
+Snowball Edge connects to your existing applications and infrastructure using standard storage interfaces, streamlining the data transfer process and minimizing setup and integration. Snowball Edge can cluster together to form a local storage tier and process your data on-premises, helping ensure your applications continue to run even when they are not able to access the cloud.
+
+### Snowmobile
+AWS Snowmobile is an Exabyte-scale data transfer service used to move extremely large amounts of data to AWS. You can transfer up to 100 PB per Snowmobile, a 45-foot long ruggedized shipping container, pulled by a semi-trailer truck. Snowmobile makes it easy to move massive volumes of data to the cloud, including video libraries, image repositories, or even a complete data center migration. Transferring data with Snowmobile is secure, fast, and cost effective.
+
+### Snowball - Exam Tips
+* Understand what Snowball is
+* Understand what Import/Export is
+* Snowball can:
+  * Import to S3
+  * Export to S3
+
+### What is S3 Transfer Acceleration?
+S3 Transfer Acceleration utilises the CloudFront Edge Network to accelerate your uploads to S3. Instead of uploading directly to your S3 bucket, you can use a distinct URL to upload directly to an edge location which will then transfer that file to S3. You will get a distinct URL to upload to.
+
+### Summary
+* Know the core fundamentals of S3:
+  * Key (name)
+  * Value (data)
+  * Version ID
+  * Metadata
+  * Access control lists
+* Object based storage only (for files)
+* **Not suitable to install an operating system on**
+* Remeber that S3 is Object based i.e. allows you to upload files
+* Files can be from 0 bytes to 5 TB
+* There is unlimited storage
+* Files are stored in buckets
+* S3 is a universal namespace, that is, names must be unique globally
+* Sample URL: https://s3-eu-west-1.amazonaws.com/<name>
+* Read after Write consistency for PUTS of new Objects
+* Eventual Consistency for overwrite PUTS and DELETES (can take some time to propagate)
+
+#### Summary - S3 Storage Tiers/Classes
+* Know the different storage tiers/classes:
+  * S3 Standard
+  * S3-IA
+  * S3 One Zone-IA
+  * Glacier
+
+#### Summary - S3 Versioning
+* Stores all versions of an object (including all writes and even if you delete an object)
+* Great backup tool
+* Once enabled, cannot be disabled, only suspended
+* Integrates with Lifecycle rules
+* Versioning's MFA Delete capability, which uses multi-factor authentication, can be used to provide an additional layer of security
+* Cross Region Replication, requires versioning enabled on the source bucket
+
+#### Summary - S3 Lifecycle Management
+* Can be used in conjunction with versioning
+* Can be applied to current versions and previous versions
+* Following actions can now be done:
+  * Transition to the Standard - Infrequent Access Storage Class (128 Kb and 30 days after the creation date)
+  * Archive to the Glacier Storage Class (30 days after IA, if relevant)
+  * Permanently Delete
+
+#### Summary - CloudFront
+* Edge Location - This is the location where content will be cached. This is separate to an AWS AZ
+* Origin - This is the origin of all the files that the CDN will distribute. This can be either an S3 Bucket, an EC2 Instance, an Elastic Load Balancer or Route 53
+* Distribution - This is the name given the CDN which consists of a collection of Edge Locations. There are different types:
+  * Web Distribution - Typically used for websites
+  * RTMP - Used for media streaming
+* Edge locations are not just READ only, you can write to them too
+* Objects are cached for the life of the TTL (Time to Live)
+* You can clear cached objects but you will be charged
+
+#### Summary - Securing your buckets
+* By default, all newly created buckets are PRIVATE
+* You can setup access control to your buckets using:
+  * Bucket Policies
+  * Access Control Lists
+* S3 buckets can be configured to create access logs which log all requests made to the S3 bucket. This can be done to another bucket
+
+#### Summary - Encryption
+* In Transit:
+  * SSL/TLS
+* At Rest:
+  * Server Side Encryption
+    * S3 Managed Keys - SSE-S3
+    * AWS Key Management Service, Managed Keys - SSE-KMS
+    * Server Side Encryption with Customer Provided Keys - SSE-C
+  * Client Side Encryption
+
+#### Summary - Storage Gateway
+* File Gateway - For flat files, stored directly on S3
+* Volume Gateway:
+  * Stored Volumes - Entire dataset is stored on site and is asynchronously backed up to S3
+  * Cached Volumes - Entire dataset is stored on S3 and the most frequently accessed data is cached on site
+* Gateway Virtual Tape Library (VTL)
+  * Used for backup and uses popular backup applications like NetBackup, Backup Exec, Veeam etc.
+
+#### Summary - Snowball
+Types of snowball:
+* Snowball
+* Snowball Edge
+* Snowmobile
+
+#### Summary - S3 Transfer Acceleration
+* You can speed up transfers to S3 using S3 transfer acceleration. This costs extra and has the greatest impact on people who are in far away location
+
+#### S3 Static Websites
+* You can use S3 to host static websites
+* Serverless
+* Very cheap, scales automatically
+* STATIC only, cannot host dynamic sites
+
+#### Summary - Last Few Tips
+* Write to S3 - HTTP 200 code for a successful write
+* You can load files to S3 much faster by enabling multipart upload
+* Read the S3 FAQ before taking the exam. It comes up A LOT!
+
+## Section 4 Quiz
+
+**1. S3 has what consistency model for PUTS of new objects**
+* Read After Write Consistency
+
+**2. What is AWS Storage Gateway?**
+It's an on-premise virtual appliance that can be used to cache S3 locally at a customers site
+
+**3. One of your users is trying to upload a 7.5GB file to S3 however they keep getting the following error message - "Your proposed upload exceeds the maximum allowed object size.". What is a possible solution for this?**
+* Design your application to use the multi-part upload API for all objects
+
+**4. What does RRS stand for when talking about S3?**
+* Reduced Redundancy Storage
+
+**5. You have been asked by your company to create an S3 bucket with the name "acloudguru1234" in the EU West region. What would be the URL for this bucket?**
+* https://s3-eu-west-1.amazonaws.com/acloudguru1234
+
+**6. What is Amazon Glacier?**
+* An AWS service designed for long term data archival
+
+**7. What does S3 stand for?**
+* Simple Storage Service
+
+**8. You are a solutions architect who works with a large digital media company. The company has decided that they want to operate within the Japanese region and they need a bucket called "testbucket" set up immediately to test their web application on. You log in to the AWS console and try to create this bucket in the Japanese region however you are told that the bucket name is already taken. What should you do to resolve this?**
+* Bucket names are global, not regional. This is a popular bucket name and is already taken. You should choose another bucket name
+
+**9. What is the availability on RRS?**
+* 99.99%
+
+**10. What is the durability on RRS?**
+* 99.99%
+
+**11. What is the durability on S3?**
+* 99.999999999%
+
+**12. What is the availability on S3?**
+* 99.99%
+
+**13. What is the minimum file size that I can store on S3?**
+* 0 bytes
+
+**14. The difference between S3 and EBS is that EBS is object based where as S3 is block based.
+* False
+
+**15. S3 has eventual consistency for which HTTP Methods?**
+* Overwrite PUTS and Deletes
+
+**16. You work for a busy digital marketing company who currently store their data on premise. They are looking to migrate to AWS S3 and to store their data in buckets. Each bucket will be named after their individual customers, followed by a random series of letters and numbers. Once written to S3 the data is rarely changed, as it has already been sent to the end customer for them to use as they see fit. However on some occassions, customers may need certain files updated quickly, and this may be for work that has been done months or even years ago. You would need to be able to access this data immediately to make changes in that case, but you must also keep your storage costs extremely low. The data is not easily reproducible if lost. Which S3 storage class should you choose to minimise costs and to maximise retrieval times?**
+* S3-IA
+
+**17. You need to use an Object based storage solution to store your critical, non replaceable data in a cost effective way. This data will be frequently updated and will need some form of version control enabled on it. Which S3 storage solution should you use?**
+* S3
+
+**18. You work for a health insurance company who collects large amounts of documents regarding patients health records. This data will be used usually only once when assessing a customer and will then need to be securely stored for a period of 7 years. In some rare cases you may need to retrieve this data within 24 hours of a claim being lodged. Which storage solution would best suit this scenario? You need to keep your costs as low as possible.**
+* Glacier
+
+**19. You run a meme creation website that frequently generates meme images. The original images are stored in S3 and the meta data about the memes are stored in DynamoDB. You need to store the memes themselves in a low cost storage solution. If an object is lost, you have created a Lambda function that will automatically recreate this meme using the original file in S3 and the metadata in Dynamodb. Which storage solution should you consider to store this non-critical, easily reproducible data on in the most cost effective solution as possible?**
+* S3-RRS
+
+**20. You run a popular photo sharing website that is based off S3. You generate revenue from your website via paid for adverts, however you have discovered that other websites are linking directly to the images on your site, and not to the HTML pages that serve the content. This means that people are not seeing your adverts and every time a request is made to S3 to serve an image it is costing your business money. How could you resolve this issue?**
+* Remove the ability for images to be served publicly to the site and then use signed URLs with expiry dates
