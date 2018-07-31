@@ -24,7 +24,7 @@ EC2 changes the economics of computing by allowing you to pay only for capacity 
 * Users can make up-front payments to reduce their total computing costs even further
   * Standard RIs (up to 75% off on-demand)
   * Convertible RIs (up to 54% off on-demand) feature the capability to change the attributes of the RI as long as the exchange results in the creation of Reserved Instances of equal or greater value
-  * Schedule RIs are available to launch within the time window you reserve. This option allows you to match your capacity reservation to a predicatable recurring schedule that only requires a fraction of a day, week, or month
+  * Schedule RIs are available to launch within the time window you reserve. This option allows you to match your capacity reservation to a predictable recurring schedule that only requires a fraction of a day, week, or month
 
 ### Spot
 * Applications that have flexible start and end times
@@ -32,7 +32,7 @@ EC2 changes the economics of computing by allowing you to pay only for capacity 
 * Users with an urgent need for large amounts of additional computing capacity
 
 ### Dedicated Hosts
-* Useful for regulartory requirements that may not support multi-tenant virtualization
+* Useful for regulatory requirements that may not support multi-tenant virtualization
 * Great for licensing which does not support multi-tenancy or cloud deployments
 * Can be purchased on-demand (hourly)
 * Can be purchased as a Reservation for up to 70% off the on-demand price
@@ -41,7 +41,7 @@ EC2 changes the economics of computing by allowing you to pay only for capacity 
 
 <div align="center">
   <img src="specialities-use-cases.jpg">
-  <h3>Figure 5-1. EC2 instance types, specialities and use cases</h3>
+  <h3>Figure 5-1. EC2 instance types, specialties and use cases</h3>
 </div>
 
 ### What is EBS?
@@ -70,7 +70,7 @@ Amazon EBS (Elastic Block Storage) allows you to create storage volumes and atta
 ### EC2 Exam Tips
 * Know On-Demand, Reserved, Spot, and Dedicated Host EC2 services
 * If a Spot instance is terminated by EC2, you will not be charged for a partial hour of usage. However, if you terminate the instance yourself, you will be charged for the complete hour in which the instance ran
-* Know FIGHT DR MC PX acroynm (EC2 instance types, specialities and use cases)
+* Know FIGHT DR MC PX acronym (EC2 instance types, specialties and use cases)
 * SSD:
   * General Purpose SSD - Balance price and performance for a wide variety of workloads
   * Provisioned IOPS SSD - Highest performance SSD volume for mission-critical low-latency or high-throughput workloads
