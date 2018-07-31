@@ -296,7 +296,7 @@ Steps to set up IAM on AWS are as follows:
 
 ---
 
-# Section 4 - AWS Object Storage and CDN - S3, Glacier and CloudFront
+# Section 4: AWS Object Storage and CDN - S3, Glacier and CloudFront
 
 This section will cover an in-depth overview on the S3 (Simple Storage Service) service.
 
