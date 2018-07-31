@@ -79,3 +79,57 @@ Amazon EBS (Elastic Block Storage) allows you to create storage volumes and atta
   * Throughput Optimized HDD - Low cost HDD volume designed for frequently accessed, throughput-intensive workloads
   * Cold HDD - Lowest cost HDD volume designed for less frequently accessed workloads
   * Magnetic - Previous generation. Can be boot volume
+
+### EC2 Lab Summary
+* Termination Protection is turned off by default, you must turn it on
+* On an EBS-backed instance, the default action is for the root EBS volume to be deleted when the instance is terminated
+* EBS root volumes of your DEFAULT AMI's cannot be encrypted. You can also use a third party tool (such as bit locker) to encrypt the root volume, or this can be done when creating AMI's in the AWS console or using the API
+
+### Security Group Basics
+* All inbound traffic is blocked by default
+* All outbound traffic is allowed
+* Changes to security groups take effect immediately
+* You can have any number of EC2 instances within a security group
+* You can have multiple security groups attached to EC2 instances
+* Security groups are STATEFUL (network access control lists are STATELESS):
+  * If you create an inbound rule allowing traffic in, that traffic is automatically allowed back out again
+* You cannot block specific IP addresses using security groups, instead use Network Access Control Lists
+* You can specify allow rules but not deny rules
+
+### Volumes and Snapshots
+* Volumes exist on EBS:
+  * Virtual Hard Disk
+* Snapshots exist on S3
+* Snapshots are point in time copies of volumes
+* Snapshots are incremental - this means that only the blocks that have changed since your last snapshot are moved to S3
+
+### Snapshots of Root Device Volumes
+* To create a snapshot for EBS volumes that serve as root devices, you should stop the instance before taking the snapshot
+* However, you can take while the instance is running
+* You can create AMI's from EBS-backed instances and snapshots
+* You can change EBS volume sizes on the fly, including changing the size and storage type
+* Volumes will ALWAYS be in the same AZ as the EC2 instance
+* To move an EC2 volume from one AZ/Region to another, take a snap or an image of it, then copy it to the new AZ/Region
+
+### Volume vs Snapshots - Security
+* Snapshots of encrypted volumes are encrypted automatically
+* Volumes restored from encrypted snapshots are encrypted automatically
+* You can share snapshots, but only if they are unencrypted
+  * These snapshots can be shared with other AWS accounts or made public
+
+### RAID, Volumes and Snapshots
+* RAID - Redundant Arrary of Independent Disks
+  * RAID 0 - Striped, No Redundancy, Good Performance
+  * RAID 1 - Mirrored, Redundancy
+  * RAID 5 - Good for reads, bad for writes, AWS does not recommend ever putting RAID 5's on EBS
+  * RAID 10 - Striped and Mirrored, Good Redundancy, Good Performance
+
+### Snapshots of a RAID array
+* Problem - Take a snapshot, the snapshot excludes data held in the cache by applications and the OS. This tends not to matter on a single volume, however using multiple volumes in a RAID array, this can be a problem due to interdependencies of the array
+* Solution - Take an application consistent snapshot
+  * Stop the application from writing to disk
+  * Flush all caches to the disk
+  * Ways to accomplish these tasks above:
+    * Freeze the file system
+    * Unmount the RAID array
+    * Shutting down the associated EC2 instance
