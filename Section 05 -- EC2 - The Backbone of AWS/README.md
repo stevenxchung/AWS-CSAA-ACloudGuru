@@ -118,7 +118,7 @@ Amazon EBS (Elastic Block Storage) allows you to create storage volumes and atta
   * These snapshots can be shared with other AWS accounts or made public
 
 ### RAID, Volumes and Snapshots
-* RAID - Redundant Arrary of Independent Disks
+* RAID - Redundant Array of Independent Disks
   * RAID 0 - Striped, No Redundancy, Good Performance
   * RAID 1 - Mirrored, Redundancy
   * RAID 5 - Good for reads, bad for writes, AWS does not recommend ever putting RAID 5's on EBS
@@ -133,3 +133,49 @@ Amazon EBS (Elastic Block Storage) allows you to create storage volumes and atta
     * Freeze the file system
     * Unmount the RAID array
     * Shutting down the associated EC2 instance
+
+### EBS vs Instance Store
+* All AMIs are categorized as either backed by EBS or backed by instance store
+* For EBS volumes - The root device for an instance launched from the AMI is an EBS volume created from an EBS snapshot
+* For instance store volumes - The root device for an instance launched from the AMI is an instance store volume created from a template stored in S3
+
+### EBS vs Instance Store - Exam Tips
+* Instance store volumes are sometimes called Ephermeral Storage
+* Instance store volumes cannot be stopped. If the underlying host fails, you lose your data
+* EBS backed instance can be stopped. You will not lose the data on this instance if it is stopped
+* You can reboot both, you will not lose your data
+* By default, both ROOT volumes will be deleted on termination, however with EBS volumes, you can tell AWS to keep the root device volume
+
+### Types of Load Balancers
+Three types of load balancers:
+* Application load balancer - Are best suited for load balancing of HTTP and HTTPS traffic. They operate at Layer 7 and are application-aware. THey are intelligent, and you can create advanced request routing, sending specificied requests to specific web servers
+* Network load balancer - Are best suited for load balancing of TCP traffic where extreme performance is required. Operating at the connection level (Layer 4), network load balancers are capable of handling millions of requests per second, while maintaining ultra-low latencies. Use for extreme performance
+* Classic load balancer - Are the legacy ELB (Elastic Load Balancers). You can load balance HTTP/HTTPS applications and use Layer 7-specific features, such as X-Forwarded and sticky sessions. You can also use strict Layer 4 load balancing for applications that rely purely on the TCP protocol
+
+### Load Balancer Errors
+* Classic Load Balancers - If your application stops responding the ELB responds with a 504 error. This means that the application is having issues. This could be either at the Web Server layer or at the Database Layer. Identify where the application is failing and scale it up or out where possible
+
+### ELB Exam Tips
+* 3 types of load balancers:
+  * Application load balancers
+  * Network load balancers
+  * Classic load balancers
+* 504 error means that the gateway has timed out. This means that the application not responding within the idle timeout period.
+  * Trouble shoot the application. Is it the Web Server or Database Server?
+* If you need the IPv4 address of your end user, look for the X-Forwarded-For-Header
+
+### Elastic Load Balancers Lab
+* Instances monitored by ELB are reported as InService or OutofService
+* Health Checks - Check the instance health by talking to it
+* ELBs have their own DNS name. You are never given an IP address
+* Read the ELB FAQ for Classic Load Balancers
+
+### CloudWatch EC2 Lab
+* Standard Monitoring - 5 minute
+* Detailed Monitoring - 1 minute
+* What can I do with CloudWatch?
+  * Dashboards - Create awsesome dashboards to see what is happening with your AWS environment
+  * Alarms - Allows you to set Alarms that notify you when particular thresholds are hit
+  * Events - CloudWatch events helps you respond to state changes in your AWS resources
+  * Logs - CloudWatch logs helps yuou aggregate, monitor, and store logs
+
