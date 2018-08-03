@@ -190,7 +190,7 @@ Three types of load balancers:
 ### S3 CLI and Regions
 * You can now actually attach a role to an EC2 instance via CLI or AWS console
 
-### Using Boostrap Scripts
+### Using Bootstrap Scripts
 * Bash scripts are always passed in the Advanced Details tab
 * We use #!/bin/bash to start the bash script
 * Bash scripts allows us to automate our web servers
