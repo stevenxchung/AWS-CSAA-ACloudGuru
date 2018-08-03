@@ -824,3 +824,19 @@ Amazon EBS (Elastic Block Storage) allows you to create storage volumes and atta
     * Freeze the file system
     * Unmount the RAID array
     * Shutting down the associated EC2 instance
+
+### The AWS Command Line and EC2
+* When we configure AWS via command line we are actually storing credentials locally on the EC2 instance
+* Using user credentials is not safe and storing them on EC2 instances is not recommended
+
+### Using IAM roles with EC2
+* Roles help secure credentials in AWS EC2
+* Remember that all roles are global so there is no need to create a new role in another Region
+
+### S3 CLI and Regions
+* You can now actually attach a role to an EC2 instance via CLI or AWS console
+
+### Using Bootstrap Scripts
+* Bash scripts are always passed in the Advanced Details tab
+* We use #!/bin/bash to start the bash script
+* Bash scripts allows us to automate our web servers
