@@ -217,7 +217,7 @@ There are two types of placement groups:
 Things to review before the exam:
 * A clustered placement group can't span multiple AZ
 * A spread placement group can span multiple AZ
-* The name you speciy for a placement group must be unique within your AWS account
+* The name you specify for a placement group must be unique within your AWS account
 * Only certain types of instances can be launched in a placement group (Compute Optimized, GPU, Memory Optimized, Storage Optimized)
 * AWS recommend homogenous instances within placement groups
 * You can't merge placement groups
@@ -246,7 +246,7 @@ AWS Lambda is a compute service where you can upload your code and create a Lamb
 * As a compute service to run your code in response to HTTP requests using Amazon API Gateway or API calls made using AWS SDKs
 
 Lambda is an encapsulation of the following:
-* Data Centres
+* Data Centers
 * Hardware
 * Assembly Code/Protocols
 * High Level Languages
@@ -273,5 +273,5 @@ Lambda is an encapsulation of the following:
 * Lambda function can trigger other lambda functions, 1 event can = x functions if functions trigger other functions
 
 * Architectures can get extremely complicated, AWS X-ray allows you to debug what is happening
-* Lambda can do things globally, you can use it to back up S3 buckets to other S3 buckets etc
+* Lambda can do things globally, you can use it to back up S3 buckets to other S3 buckets etc.
 * Know triggers
