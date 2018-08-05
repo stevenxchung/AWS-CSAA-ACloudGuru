@@ -840,3 +840,84 @@ Amazon EBS (Elastic Block Storage) allows you to create storage volumes and atta
 * Bash scripts are always passed in the Advanced Details tab
 * We use #!/bin/bash to start the bash script
 * Bash scripts allows us to automate our web servers
+
+### EC2 Instance Metadata
+Instance metadata is data about your instance that you can use to configure or manage the running instance. Instance metadata is divided into categories.
+
+Although you can only access instance metadata and user data from within the instance itself, the data is not protected by cryptographic methods. Anyone who can access the instance can view its metadata. Therefore, you should take suitable precautions to protect sensitive data (such as long-lived encryption keys). You should not store sensitive data, such as passwords, as user data.
+
+You can also use instance metadata to access user data that you specified when launching your instance. For example, you can specify parameters for configuring your instance, or attach a simple script. You can also use this data to build more generic AMIs that can be modified by configuration files supplied at launch time. For example, if you run web servers for various small businesses, they can all use the same AMI and retrieve their content from the Amazon S3 bucket you specify in the user data at launch. To add a new customer at any time, simply create a bucket for the customer, add their content, and launch your AMI. If you launch more than one instance at the same time, the user data is available to all instances in that reservation.
+
+EC2 instances can also include dynamic data, such as an instance identity document that is generated when the instance is launched.
+
+For more information on EC2 instance metadata see the AWS EC2 guide on [Instance Metadata and User Data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html).
+
+### Autoscaling Lab
+An important take away is that you can have instances spread across multiple AZs and even if you lose two of those AZ out of three you still won't have an outage. Route 53 can also help further protect from regional failure by detecting failure and redirecting traffic to other parts of the world.
+
+### EC2 Placement Groups
+There are two types of placement groups:
+* Clustered Placement Group - A grouping of instances within a single AZ. Placement groups are recommended for applications that need low network latency, high network throughput, or both. Only certain instances can be launched into a clustered placement group
+* Spread Placement Group - A group of instances that are each placed on distinct underlying hardware. Spread placement groups are recommended for applications that have a small number of critical instances that should be kept separate from each other
+
+Things to review before the exam:
+* A clustered placement group can't span multiple AZ
+* A spread placement group can span multiple AZ
+* The name you specify for a placement group must be unique within your AWS account
+* Only certain types of instances can be launched in a placement group (Compute Optimized, GPU, Memory Optimized, Storage Optimized)
+* AWS recommend homogenous instances within placement groups
+* You can't merge placement groups
+* You can't move an existing instance into a placement group. You can create an AMI from your existing instance, and then launch a new instance from the AMU into a placement group
+
+### What is EFS?
+Amazon EFS (Elastic File System) is a file storage service for Amazon EC2 instances. Amazon EFS is easy to use and provides a simple interface that allows you to create and configure file systems quickly and easily. With EFS, storage capacity is elastic, growing and shrinking automatically as you add and remove files, so your applications have the storage they need, when they need it.
+
+### EFS Features
+* Supports the Network File System version 4 (NFSv4) protocol
+* You only pay for the storage you use (no pre-provisioning required)
+* Can scale up to the petabytes
+* Can support thousands of concurrent NFS connections
+* Data is stored across multiple AZ's within a region
+* Read After Write Consistency
+
+Use case for EFS:
+* Using EFS as a file server or a central repository for your files within your EC2 instances
+* Can set restrictions which will be reflected across all EC2 instances
+* EFS allows multiple EC2 instances to connect to it whereas EBS can only mount to a single EC2 instance
+
+### What is Lambda?
+AWS Lambda is a compute service where you can upload your code and create a Lambda function. AWS Lambda takes care of provisioning and managing the servers that you use to run the code. You don't have to worry about operating systems, patching, scaling, etc. You can use Lambda in the following ways:
+
+* As an event-driven compute service where the AWS Lambda runs your code in response to events. These events could be changes to data in an Amazon S3 bucket or an Amazon DynamoDB table
+* As a compute service to run your code in response to HTTP requests using Amazon API Gateway or API calls made using AWS SDKs
+
+Lambda is an encapsulation of the following:
+* Data Centers
+* Hardware
+* Assembly Code/Protocols
+* High Level Languages
+* Operating Systems
+* Application Layer/AWS APIs
+* AWS Lambda
+
+### How is Lambda Priced?
+* Number of requests:
+  * First 1 million requests are free. $0.20 per 1 million requests thereafter
+* Duration:
+  * Calculated from the time your code begins executing until it returns or otherwise terminates, rounded up to the nearest 100 ms. The price depends on the amount of memory you allocate to your function. You are charged $0.00001667 for every GB-second used
+
+### Why is Lambda Cool?
+* No servers!
+* Continuous scaling!
+* Super cheap!
+
+### Lambda - Exam Tips
+* Lambda scales out (not up) automatically
+* Lambda functions are independent, 1 event = 1 function
+* Lambda is serverless
+* Know what services are serverless!
+* Lambda function can trigger other lambda functions, 1 event can = x functions if functions trigger other functions
+
+* Architectures can get extremely complicated, AWS X-ray allows you to debug what is happening
+* Lambda can do things globally, you can use it to back up S3 buckets to other S3 buckets etc.
+* Know triggers
