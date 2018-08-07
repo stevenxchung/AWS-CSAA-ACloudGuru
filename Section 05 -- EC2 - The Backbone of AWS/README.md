@@ -409,3 +409,32 @@ AWS Lambda is a compute service where you can upload your code and create a Lamb
 There are two types of placement groups:
 * Clustered Placement Group - A grouping of instances within a single AZ. Placement groups are recommended for applications that need low network latency, high network throughput, or both. Only certain instances can be launched into a clustered placement group
 * Spread Placement Group - A group of instances that are each placed on distinct underlying hardware. Spread placement groups are recommended for applications that have a small number of critical instances that should be kept separate from each other
+
+## Section 5 Quiz
+
+**1. EBS Snapshots are backed up to S3 in what manner?**
+* Incrementally
+
+**2. Do Amazon EBS volumes persist independently from the life of an Amazon EC2 instance, for example, if I terminated an EC2 instance, would that EBS volume remain?**
+* Only if instructed to when created
+
+**3. Can I delete a snapshot of an EBS Volume that is used as the root device of a registered AMI?**
+* No, you must deregister the AMI before being able to delete the root device
+
+**4. A placement group can be deployed across multiple Availability Zones.**
+* False
+
+**5. While creating the snapshots using the command line tools, which command should I be using?**
+* ec2-create-snapshot
+
+**6. Can you attach an EBS volume to more than one EC2 instance at the same time?**
+* No
+
+**7. A placement group is ideal for**
+* EC2 instances that require high network throughput and low latency across a single AZ
+
+**8. Using the console, I can add a role to an EC2 instance, after that instance has been created and powered up.**
+* True
+
+**9. I can change the permissions to a role, even if that role is already assigned to an existing EC2 instance, and these changes will take effect immediately.**
+* True
