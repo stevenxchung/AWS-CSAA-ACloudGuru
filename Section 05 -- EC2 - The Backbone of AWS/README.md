@@ -309,7 +309,7 @@ Below are the major subsections in Section 5 worth going over before the exam.
   * Spot
   * Reserved
   * Dedicated Hosts
-* Rember with spot instances:
+* Remember with spot instances:
   * If you terminate the instance, you pay for the hour
   * If AWS terminates the spot instance, you get the hour it was terminated in for free
 
