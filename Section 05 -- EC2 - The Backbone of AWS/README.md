@@ -275,3 +275,137 @@ Lambda is an encapsulation of the following:
 * Architectures can get extremely complicated, AWS X-ray allows you to debug what is happening
 * Lambda can do things globally, you can use it to back up S3 buckets to other S3 buckets etc.
 * Know triggers
+
+### Build a Serverless Page
+Below is a schematic of how the lambda serverless website will work with Route 53, API Gateway, Lambda, and S3. The steps are as follows:
+
+1. Get IP address
+2. Route 53 returns IP address
+3. Get web page from S3
+4. Return static/dynamic content
+5. Get request to API Gateway
+6. Forward request to Lambda
+7. Return data to user
+
+<div align="center">
+  <img src="lambda-serverless-web.jpg">
+  <h3>Figure 5-2. Lambda serverless web schematic</h3>
+</div>
+
+### Using Polly
+Below is a schematic of how Polly will be set up in AWS. Polly converts text into an MP3 file.
+
+<div align="center">
+  <img src="polly-setup.jpg">
+  <h3>Figure 5-3. Overview of Polly application</h3>
+</div>
+
+### EC2 Summary
+Below are the major subsections in Section 5 worth going over before the exam.
+
+#### Exam Tips - EC2
+* Know the differences between:
+  * On Demand
+  * Spot
+  * Reserved
+  * Dedicated Hosts
+* Rember with spot instances:
+  * If you terminate the instance, you pay for the hour
+  * If AWS terminates the spot instance, you get the hour it was terminated in for free
+
+* Know the EC2 instance types as shown in Figure 5-1
+
+#### Exam Tips - EBS
+* EBS Consists of:
+  * SSD, General Purpose - GP2 - (up to 10,000 IPOS)
+  * SSD, Provisioned IOPS - IO1 - (more than 10,000 IOPS)
+  * HDD, Throughput Optimized - ST1 - Frequently accessed workloads
+  * HDD, Cold - SC1 - Less frequently accessed data
+  * HDD, Magnetic - Standard - Cheap, infrequently accessed storage
+
+* You cannot mount a single EBS volume to multiple EC2 instances; instead use EFS
+
+#### Exam Tips - EC2 Lab
+* Termination Protection is turned off by default, you must turn it on
+* On an EBS-backed instance, the default action is for the root EBS volume to be deleted when the instance is terminated
+* EBS-backed root volumes can now be encrypted using AWS API or console or you can use a third party tool to encrypt the root volume
+* Additional volumes can also be encrypted
+
+#### Exam Tips - Volumes vs Snapshots
+* Volumes exist on EBS:
+  * Virtual hard disk
+* Snapshots exist on S3
+* You can take a snapshot of a volume, this will store that volume on S3
+* Snapshots are point in time copies of volumes
+* Snapshots are incremental. This means that only the blocks that have changed since your last snapshot are moved to S3
+* It may take some time to create the first snapshot
+
+#### Exam Tips - Volumes vs Snapshots - Security
+* Snapshots of encrypted volumes are encrypted automatically
+* Volumes restored from encrypted snapshots are encrypted automatically
+* You can share snapshots, but only if they are unencrypted
+  * These snapshots can be shared with other AWS accounts or made public
+
+#### Exam Tips - Snapshots of Root Device Volumes
+* To create a snapshot for Amazon EBS volumes that serve as root devices, you should stop the instance before taking the snapshot
+
+#### Exam Tips - EBS vs Instance Store
+* Instance store volumes are sometimes called Ephemeral Storage
+* Instance store volumes cannot be stopped. If the underlying host fails, you lose your data
+* EBS backed instance can be stopped. You will not lose the data on this instance if it is stopped
+* You can reboot both, you will not lose your data
+* By default, both ROOT volumes will be deleted on termination, however with EBS volumes, you can tell AWS to keep the root device volume
+
+### How to take Snapshots of a RAID array
+* Problem - Take a snapshot, the snapshot excludes data held in the cache by applications and the OS. This tends not to matter on a single volume, however using multiple volumes in a RAID array, this can be a problem due to interdependencies of the array
+* Solution - Take an application consistent snapshot
+  * Stop the application from writing to disk
+  * Flush all caches to the disk
+  * Ways to accomplish these tasks above:
+    * Freeze the file system
+    * Unmount the RAID array
+    * Shutting down the associated EC2 instance
+
+#### Exam Tips - Amazon Machine Images
+AMIs are regional. You can only launch an AMI from the region in which it is stored. However you can copy AMIs to other regions using the console, command line, or the Amazon EC2 API
+
+#### Exam Tips - CloudWatch Lab
+* Standard Monitoring - 5 minute
+* Detailed Monitoring - 1 minute
+
+* CloudWatch is performance monitoring
+* CloudTrail is for auditing
+
+#### What can I do with CloudWatch?
+  * Dashboards - Create awesome dashboards to see what is happening with your AWS environment
+  * Alarms - Allows you to set Alarms that notify you when particular thresholds are hit
+  * Events - CloudWatch events helps you respond to state changes in your AWS resources
+  * Logs - CloudWatch logs helps you aggregate, monitor, and store logs
+
+#### Exam Tips - Roles Lab
+* Roles are more secure than storing your access key and secret access key on individual EC@ instances
+* Roles are easier to manage
+* Roles can be assigned to an EC2 instance AFTER it has been provisioned using both the command line and the AWS console
+* Roles are universal - you can use them in any region
+
+#### Exam Tips - Instance Metadata
+* Used to get information about an instance (such as public IP)
+
+#### Exam Tips - EFS Lab
+* Supports the Network File System version 4 (NFSv4) protocol
+* You only pay for the storage you use (no pre-provisioning required)
+* Can scale up to the petabytes
+* Can support thousands of concurrent NFS connections
+* Data is stored across multiple AZ's within a region
+* Read After Write Consistency
+
+#### What is Lambda?
+AWS Lambda is a compute service where you can upload your code and create a Lambda function. AWS Lambda takes care of provisioning and managing the servers that you use to run the code. You don't have to worry about operating systems, patching, scaling, etc. You can use Lambda in the following ways:
+
+* As an event-driven compute service where the AWS Lambda runs your code in response to events. These events could be changes to data in an Amazon S3 bucket or an Amazon DynamoDB table
+* As a compute service to run your code in response to HTTP requests using Amazon API Gateway or API calls made using AWS SDKs
+
+#### What is a Placement Group?
+There are two types of placement groups:
+* Clustered Placement Group - A grouping of instances within a single AZ. Placement groups are recommended for applications that need low network latency, high network throughput, or both. Only certain instances can be launched into a clustered placement group
+* Spread Placement Group - A group of instances that are each placed on distinct underlying hardware. Spread placement groups are recommended for applications that have a small number of critical instances that should be kept separate from each other
