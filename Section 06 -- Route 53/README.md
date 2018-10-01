@@ -65,3 +65,6 @@ There are several different routing policies on AWS
 
 ### Simple Routing Policy - Lab
 If you choose simple routing policy you can only have one record with multiple IP addresses. If you specify multiple values in a record, Route 53 returns all values to the user in a random order.
+
+### Weighted Routing Policy - Lab
+Weighted routing policies let you split your traffic based on different weights assigned (e.g. you can set 20% of your traffic to go to US-EAST-1 and then 80% to go to EU-WEST-1).
