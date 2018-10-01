@@ -53,3 +53,12 @@ DNS is used to convert human friendly domain names into an IP (Internet Protocol
 * CNames
 * MX records
 * PTR records
+
+### Routing Policies Available on AWS
+There are several different routing policies on AWS
+* Simple routing
+* Weighted routing
+* Latency-based routing
+* Failover routing
+* Geolocation routing
+* Multivalue answer routing
