@@ -62,3 +62,6 @@ There are several different routing policies on AWS
 * Failover routing
 * Geolocation routing
 * Multivalue answer routing
+
+### Simple Routing Policy - Lab
+If you choose simple routing policy you can only have one record with multiple IP addresses. If you specify multiple values in a record, Route 53 returns all values to the user in a random order.
