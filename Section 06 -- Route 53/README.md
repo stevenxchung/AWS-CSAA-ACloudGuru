@@ -83,3 +83,23 @@ Geolocation routing lets you choose where your traffic will be sent based on the
 
 ### Multivalue Routing
 If you want to route traffic approximately randomly to multiple resources, such as web servers, you can create one multivalue answer record for each resource and, optionally, associate a Route 53 health check with each record. If you create a dozen multivalue answer records, Route 53 responds to DNS queries with up to eight healthy records in response to each DNS query.
+
+### DNS Exam Tips
+Make sure to go over the sections above (mainly routing policy sections) before taking the exam.
+
+## Section 6 Quiz
+
+**1. Does Route 53 support MX Records?**
+* Yes
+
+**2. Route 53 is named so because**
+* The DNS Port is on Port 53 and Route 53 is a DNS Service
+
+**3. Route 53 does not support zone apex records (or naked domain names)**
+* Incorrect
+
+**4. Route53 is Amazon's DNS Service**
+* True
+
+**5. There is a limit to the number of domain names that you can manage using Route 53.**
+* True and False. There is a limit of domain names, however this limit can be raised by contacting AWS support.
