@@ -13,7 +13,7 @@ DNS is used to convert human friendly domain names into an IP (Internet Protocol
 
 ### Top Level Domains
 * The last word in a domain name represents the top level domain name (i.e. the .com in google.com) whereas the second word in a domain name is known as the second level domain name (i.e. acloud.guru)
-* Top level domain names are controlled bvy the IANA (Internet Assigned Numbers Authority) in a root zone database which is essentially a database of all available top level domains
+* Top level domain names are controlled by the IANA (Internet Assigned Numbers Authority) in a root zone database which is essentially a database of all available top level domains
 
 ### Domain Registrars
 * A registrar is an authority that can assign domain names directly under one or more top-level domains. Each domain name becomes registered in a central database known as the WhoIS database.
@@ -29,7 +29,7 @@ DNS is used to convert human friendly domain names into an IP (Internet Protocol
 * NS (Name Server) records are used by top level domain servers to direct traffic to the content DNS server which contains the authoritative DNS records
 
 ### A Records
-* The address record is used by a computer to tranlate the name of the domain to an IP address
+* The address record is used by a computer to translate the name of the domain to an IP address
 
 ### TTL
 * The length that a DNS record is cached on either the resolving server or the users own local PC is to the value of the TTL (Time To Live) in seconds.
@@ -73,8 +73,7 @@ Weighted routing policies let you split your traffic based on different weights 
 Latency based routing allows you to route you traffic based on the lowest network latency for you end user (i.e. which region will give them the fastest response time). To use latency-based routing, you create a latency resource record set for the EC2 (or ELB) resource in each region that hosts your website. When Route 53 receives a query for your site, it selects the latency resource record set for the region that gives the user the lowest latency. Route 53 then responds with the value associated with that resource record set.
 
 ### Failover Routing Policy - Lab
-Failover routing policies are used when you want to create an active/passive set up. For example,
-you may want your primary site to be in EU-WEST-2 and your secondary DR site in AP-SOUTHEAST-2.
+Failover routing policies are used when you want to create an active/passive set up. For example, you may want your primary site to be in EU-WEST-2 and your secondary DR site in AP-SOUTHEAST-2.
 * Route 53 will monitor the health or your primary site using a health check
 * A health check monitors the health of your end points
 
