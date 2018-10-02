@@ -80,3 +80,6 @@ you may want your primary site to be in EU-WEST-2 and your secondary DR site in 
 
 ### Geolocation Routing Policy - Lab
 Geolocation routing lets you choose where your traffic will be sent based on the geographic location of your users.
+
+### Multivalue Routing
+If you want to route traffic approximately randomly to multiple resources, such as web servers, you can create one multivalue answer record for each resource and, optionally, associate a Route 53 health check with each record. If you create a dozen multivalue answer records, Route 53 responds to DNS queries with up to eight healthy records in response to each DNS query.
