@@ -77,3 +77,6 @@ Failover routing policies are used when you want to create an active/passive set
 you may want your primary site to be in EU-WEST-2 and your secondary DR site in AP-SOUTHEAST-2.
 * Route 53 will monitor the health or your primary site using a health check
 * A health check monitors the health of your end points
+
+### Geolocation Routing Policy - Lab
+Geolocation routing lets you choose where your traffic will be sent based on the geographic location of your users.
