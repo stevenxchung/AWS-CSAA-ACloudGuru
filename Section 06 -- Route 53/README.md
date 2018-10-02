@@ -71,3 +71,9 @@ Weighted routing policies let you split your traffic based on different weights 
 
 ### Latency Routing Policy - Lab
 Latency based routing allows you to route you traffic based on the lowest network latency for you end user (i.e. which region will give them the fastest response time). To use latency-based routing, you create a latency resource record set for the EC2 (or ELB) resource in each region that hosts your website. When Route 53 receives a query for your site, it selects the latency resource record set for the region that gives the user the lowest latency. Route 53 then responds with the value associated with that resource record set.
+
+### Failover Routing Policy - Lab
+Failover routing policies are used when you want to create an active/passive set up. For example,
+you may want your primary site to be in EU-WEST-2 and your secondary DR site in AP-SOUTHEAST-2.
+* Route 53 will monitor the health or your primary site using a health check
+* A health check monitors the health of your end points
