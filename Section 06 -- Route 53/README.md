@@ -68,3 +68,6 @@ If you choose simple routing policy you can only have one record with multiple I
 
 ### Weighted Routing Policy - Lab
 Weighted routing policies let you split your traffic based on different weights assigned (e.g. you can set 20% of your traffic to go to US-EAST-1 and then 80% to go to EU-WEST-1).
+
+### Latency Routing Policy - Lab
+Latency based routing allows you to route you traffic based on the lowest network latency for you end user (i.e. which region will give them the fastest response time). To use latency-based routing, you create a latency resource record set for the EC2 (or ELB) resource in each region that hosts your website. When Route 53 receives a query for your site, it selects the latency resource record set for the region that gives the user the lowest latency. Route 53 then responds with the value associated with that resource record set.
