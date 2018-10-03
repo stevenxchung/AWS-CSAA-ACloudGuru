@@ -17,7 +17,7 @@ Think of a VPC (Virtual Private Cloud) as a virtual data centre in the cloud. A 
 * Create internet gateway and attach it to our VPC
 * Much better security control over your AWS resources
 * Instance security groups
-* Subnet network ACLS (access control lists)
+* Subnet network ACLs (access control lists)
 
 ### Default VPC vs Custom VPC
 * Default VPC is user friendly, allowing you to immediately deploy instances
