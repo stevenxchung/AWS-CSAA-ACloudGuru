@@ -45,3 +45,4 @@ Think of a VPC (Virtual Private Cloud) as a virtual data centre in the cloud. A 
 * Network ACLs contain a numbered list of rules that is evaluated in order, starting with the lowest numbered rule
 * Network ACLs have separate inbound and outbound rules, and each rule can either allow or deny traffic
 * Network ACLs are stateless; responses to allow inbound traffic are subject to the rules for outbound traffic (and vice versa)
+* Block IP addresses using network ACLs not security groups
