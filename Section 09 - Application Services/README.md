@@ -51,3 +51,28 @@ The most important features of FIFO queue is the FIFO (first-in-first-out) deliv
     * Max is 12 hours
 * Short polling - returned immediately even if no messages are in the queue
 * Long polling - polls the queue periodically and only returns a response when a message is in the queue for the timeout is reached
+
+### SWF
+Amazon SWF (Simple Workflow Service) is a web service that makes it easy to coordinate work across distributed application components. SWF enables applications for a range of use cases.
+
+### SWF Workers
+Workers are programs that interact with SWF to get tasks, process received tasks, and return the results.
+
+### SWF Decider
+The decider is a program that controls the coordination of tasks, i.e. their ordering, concurrency, and scheduling according to the application logic.
+
+### SWF Workers and Deciders
+* The workers and the decider can run on cloud infrastructure, such as AWS EC2, or on machines behind firewalls. SWF brokers the interactions between works and the decider. It allows the decider to get consistent views into the progress of tasks and to initiate new tasks in an ongoing manner
+* At the same time SWF stores tasks, assigns them to workers when they are ready, and monitors their progress. SWF ensures that a task is assigned only once and is never duplicated. Since AWS maintains the application's state durably, workers and deciders don't have to keep track of execution state. They can run independently and scale quickly
+
+### SWF Domains
+* Your workflow and activity types and the workflow execution itself are all scoped to a domain. Domains isolate a set of types, executions, and task lists from others within the same account
+* The parameters are specified in JSON format
+
+### How long for workflows?
+Maximum workflow can be one year and the value is always measured in seconds
+
+### SWF vs SQS
+* SWF presents a task-oriented API, whereas SQS offers a message-oriented API
+* SWF ensures that a task is assigned only once and is never duplicated, with SQS you need to handle duplicated messages and may also need to ensure that a message is processed only once
+* SWF keeps track of all the task and events in an application with SQS you need to implement you own application-level tracking, especially if your application uses multiple queues
