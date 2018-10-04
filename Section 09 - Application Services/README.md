@@ -107,3 +107,31 @@ Maximum workflow can be one year and the value is always measured in seconds
 * Convert media files from their original source format in to different formats that will play on smartphones, tablets, PCs, etc
 * Provides transcoding presets for popular output formats, which means that you do not need to guess about which settings work best on particular devices
 * Pay based on the minutes that you transcode and the resolution at which you transcode
+
+### What is API Gateway?
+API Gateway is a fully managed service that makes it easy for developers to publish, maintain, monitor, and secure APIs at any scale.
+
+### What is API Caching?
+API caching can reduce the number of calls made to your endpoint and also improve latency of the requests to your API. When you enable caching for a stage, API Gateway caches responses from your endpoint for a specified TTL (time-to-live) period, in seconds. API Gateway then responds to the request by looking up the endpoint response from the cache instead of making a request to your endpoint.
+
+### What can API Gateway do?
+* Low cost and efficient
+* Scales effortlessly
+* You can throttle requests to prevent attacks
+* Connect to CloudWatch to log all requests
+
+### Same Origin Policy
+In computing, the same-origin policy (web app security model) states that a web browser permits scripts contained in a first web page to access data in a second web page but only if both web pages have the same origin.
+
+### Cross-Origin Resource Sharing (CORS)
+* CORS is one way the server at the other end (not the client code in the brower) can relax the same-origin policy
+* Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources (e.g. fonts) on a web page to be requested from another domain outside the domain from which the first resource was served
+* Error - "Origin policy cannot be read at the remote resource?" - You need to enable CORS on API Gateway
+
+### Exam Tips - API Gateway
+* Remember what API Gateway is at a high level
+* API Gateway has caching capabilities to increase performance
+* API Gateway is low cost and scales automatically
+* You can throttle API Gateway to prevent attacks
+* You can log results to CloudWatch
+* If you are using JavaScript/AJAX that uses multiple domains with API Gateway, ensure that you have enabled CORS on API Gateway
