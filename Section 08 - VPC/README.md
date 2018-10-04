@@ -90,3 +90,20 @@ Think of a VPC (Virtual Private Cloud) as a virtual data centre in the cloud. A 
 
 ### Exam Tips - ALB's
 * You will need at least two public subnets in order to deploy an ALB (Application Load Balancer)
+
+## Section 8 Quiz
+
+**1. Security groups act like a firewall at the instance level whereas ___ are an additional layer of security that act at the subnet level.**
+* ACLs
+
+**2. How many VPC's am I allowed in each AWS Region by default?**
+* Five
+
+**3. VPC stands for:**
+* Virtual Private Cloud
+
+**4. How many internet gateways can I attach to my custom VPC?**
+* One
+
+**5. You have a VPC with both public and private subnets. You have 3 EC2 instances that have been deployed in to the public subnet and each has internet access. You deploy a 4th instance using the same AMI and this instance does not have internet access. What could be the cause of this?**
+* The instance needs either an Elastic IP address/Public IP address assigned to it
