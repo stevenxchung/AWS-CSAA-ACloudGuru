@@ -135,3 +135,36 @@ In computing, the same-origin policy (web app security model) states that a web 
 * You can throttle API Gateway to prevent attacks
 * You can log results to CloudWatch
 * If you are using JavaScript/AJAX that uses multiple domains with API Gateway, ensure that you have enabled CORS on API Gateway
+
+### What is streaming data?
+* Streaming data is data that is generated continuously by thousands of data sources, which typically send in the data records simultaneously and in small sizes (KB)
+* Streaming data includes:
+    * Purchases from online stores
+    * Stock prices
+    * Game data
+    * Social network data
+    * Geospatial data
+    * IoT sensor data
+
+### What is Kinesis?
+Amazon Kinesis is a platform on AWS to send your streaming data to. Kinesis makes it easy to load and analyze streaming data.
+
+### What are the core Kinesis Services?
+* Kinesis Streams
+* Kinesis Firehose
+* Kinesis Analytics
+
+### Kinesis Streams
+* Kinesis Streams consist of shards
+    * Five transactions per second for reads, up to a maximum total data read rate of two 2 Mbps and up to 1,000 records per second for writes, up to a maximum toala data write rate of 1 Mbps
+    * The data capacity of your stream is a function of the number of shards that you specify for the stream. The total capcity of the stream is the sum of the capacities of its shards
+
+### Kinesis Firehose
+Amazon Kinesis Data Firehose is the easiest way to reliably load streaming data into data stores and analytics tools. It can capture, transform, and load streaming data into Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, and Splunk, enabling near real-time analytics with existing business intelligence tools and dashboards you’re already using today. It is a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, transform, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security.
+
+### Kinesis Analytics
+Amazon Kinesis Data Analytics is the easiest way to process streaming data in real time with standard SQL without having to learn new programming languages or processing frameworks. Amazon Kinesis Data Analytics enables you to query streaming data or build entire streaming applications using SQL, so that you can gain actionable insights and respond to your business and customer needs promptly.
+
+### Exam Tips - Kinesis
+* Know the difference between Kinesis Streams and Kinesis Firehose
+* Understand what Kinesis Analytics is
