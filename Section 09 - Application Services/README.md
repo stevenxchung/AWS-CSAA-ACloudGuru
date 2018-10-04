@@ -76,3 +76,28 @@ Maximum workflow can be one year and the value is always measured in seconds
 * SWF presents a task-oriented API, whereas SQS offers a message-oriented API
 * SWF ensures that a task is assigned only once and is never duplicated, with SQS you need to handle duplicated messages and may also need to ensure that a message is processed only once
 * SWF keeps track of all the task and events in an application with SQS you need to implement you own application-level tracking, especially if your application uses multiple queues
+
+### What is SNS?
+* AWS SNS (Simple Notification Service) is a web service that makes it easy to set up, operate, and send notifications from the cloud. It provides developers with highly scalable, flexibile, and cost-effective capability to publish messages from an application and immediately deliver them to subscribers or other applications
+
+* SNS allows you to group multiple recipients using topics. Topic is an "access point" for allowing recipients to dynamically subscribe for identical copies of the same notification. One topic can support deliveries to multiple endpoint types
+
+* To prevent messages from being lost, all messages published to SNS are stored redundantly across multiple AZs
+
+### SNS Benefits
+* Instantaneous, push-based delivery (no polling)
+* Simple APIs and easy integration with applications
+* Flexible message delivery over multiple transport protocols
+* Inexpensive, pay-as-you-go model with no up-front costs
+* Web-based AWS management console offers the simplicity of a point-and-click interface
+
+### SNS vs SQS
+* Both messaging services in AWS
+* SNS - Push
+* SQS - Polls (Pulls)
+
+### SNS Pricing
+* User pay $0.50 per 1 million Amazon SNS Request
+* $0.06 per 100,000 notification deliveries over HTTP
+* $0.75 per 100 notification deliveries over SMS
+* $2.00 per 100,000 notification deliveries over Email
