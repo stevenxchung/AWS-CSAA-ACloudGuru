@@ -101,3 +101,9 @@ Maximum workflow can be one year and the value is always measured in seconds
 * $0.06 per 100,000 notification deliveries over HTTP
 * $0.75 per 100 notification deliveries over SMS
 * $2.00 per 100,000 notification deliveries over Email
+
+### Elastic Transcoder
+* Media transcoder in the cloud
+* Convert media files from their original source format in to different formats that will play on smartphones, tablets, PCs, etc
+* Provides transcoding presets for popular output formats, which means that you do not need to guess about which settings work best on particular devices
+* Pay based on the minutes that you transcode and the resolution at which you transcode
