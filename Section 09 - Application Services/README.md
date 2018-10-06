@@ -24,7 +24,7 @@ The most important features of FIFO queue is the FIFO (first-in-first-out) deliv
 
 ### SQS Key Facts
 * SQS is pull-based, not pushed-based
-* Messages are 256 KD in size
+* Messages are 256 KB in size
 * Messages can be kept in the queue from one minute to 14 days
 * Default retention period is four days
 * SQS guarantees that you messages will be processed at least once
@@ -168,3 +168,35 @@ Amazon Kinesis Data Analytics is the easiest way to process streaming data in re
 ### Exam Tips - Kinesis
 * Know the difference between Kinesis Streams and Kinesis Firehose
 * Understand what Kinesis Analytics is
+
+## Section 9 Quiz
+
+**1. What does Amazon SWF stand for?**
+* Simple Work Flow
+
+**2. What does Amazon SES stand for?**
+* Simple Email Service
+
+**3. What happens when you create a topic on Amazon SNS?**
+* An Amazon Resource Name is created
+
+**4. What is the difference between SNS and SQS?**
+* SNS is a push notification service, whereas SQS is a message systemn that requires worker nodes to poll the queue
+
+**5. What application service allows you to decouple your infrastructure using messaged based queues?**
+* SQS
+
+**6. What does a "domain" refer to in Amazon SWF?**
+* A collection of related workflows
+
+**7. By default, EC2 instances pull SQS messages from an SQS queue on a FIFO (First In First out) basis.**
+* False
+
+**8. Amazon's SQS service guarantees a message will be delivered at least once.**
+* True
+
+**9. Amazon SWF ensures that a task is assigned only once and is never duplicated.**
+* True
+
+**10. Amazon SWF restricts individuals to use specific programming languages.**
+* False
