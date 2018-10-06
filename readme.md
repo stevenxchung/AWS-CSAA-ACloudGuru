@@ -1822,3 +1822,9 @@ Amazon Kinesis Data Analytics is the easiest way to process streaming data in re
 * False
 
 ---
+
+## Section 10: The Real World
+
+There are no lecture notes in this section, only a real life example of how to build a website using AWS and WordPress.
+
+---
