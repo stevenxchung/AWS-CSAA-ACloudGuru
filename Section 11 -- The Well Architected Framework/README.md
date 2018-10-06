@@ -154,3 +154,62 @@ Security in the cloud consist of 4 areas:
 4. Detective controls
 
 Also review each questions section within Pillar One.
+
+### Pillar Two - The Reliability Pillar
+The reliability pillar covers the ability of a system to recover from service or infrastructure outages/distruptions as well as the ability to dynamically acquire computing resources to meet demand.
+
+### Pillar Two - Reliability Design Principles
+* Test recovery procedures
+* Automatically recover from failure
+* Scale horizontally to increase aggregate system availability
+* Stop guessing capacity
+
+### Pillar Two - Reliability Definition
+Reliability in the cloud consists of three areas:
+* Foundations
+* Change management
+* Failure management
+
+### Pillar Two - Best Practices - Foundations
+* Before architecting any system, you need to make sure you have the prerequisite foundations. In traditional IT one of the first things you should consider is the size of the comms link between your HQ and your data center. If you misprovision this link, it can take three to six months to upgrade which can cause a huge disruption to your traditional IT estate
+
+* AWS handles most of the foundations for you. The cloud is designed to be essentially limitless meaning that AWS handle the networking can compute requirements themselves. However, they do set service limits to stop customers from accidentally over-provisioning resources
+
+### Pillar Two - Best Practices - Foundations Questions
+* How are you managing AWS service limits for you account?
+* How are you planning your network topology on AWS?
+* Do you have an escalation path to deal with technical issues?
+
+### Pillar Two - Best Practices - Change Management
+* You need to be aware of how change affects a system so that you can plan proactively around it. Monitoring allows you to detect any changes to your environment and react. In traditional systems, change control is done manually and are carefully co-ordinated with auditing
+
+* AWS makes things a lot easier, you can use CloudWatch to monitor your environment and services such as autoscaling to automate change in response to changes on your production environment
+
+### Pillar Two - Best Practices - Change Management Questions
+* How does your system adapt to changes in demand?
+* How are you monitoring AWS resources?
+* How are you executing change management?
+
+### Pillar Two - Best Practices - Failure Management
+You should always architect your systems with the assumptions that failure will occur. You should become aware of these failures, how they occurred, how to respond to them and then plan on how to prevent these from happening again.
+
+### Pillar Two - Best Practices - Failure Management Questions
+* How are you backing up your data?
+* How does your system withstand component failures?
+* How are you planning for recovery?
+
+### Pillar Two - Key AWS Services
+* Foundations
+  * IAM, VPC
+* Change management
+  * AWS CloudTrail
+* Failure management
+  * AWS CloudFormation
+
+### Pillar Two - Reliability Exam Tips
+Reliability in the cloud consists of three areas:
+* Foundations
+* Change management
+* Failure management
+
+Also review each questions section within Pillar Two.
