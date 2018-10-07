@@ -299,3 +299,69 @@ Performance efficiency in the cloud consists of four areas:
 4. Space-time trade-off
 
 Also review each questions section within Pillar Three.
+
+### Pillar Four - The Cost Optimization Pillar
+Use the cost optimization pillar to reduce your costs to a minimum and use those savings for other parts of your business. A cost-optimized system allows you to pay the lowest price possible while still achieving your business objectives.
+
+### Pillar Four - Cost Optimization Design Principles
+* Transparently attribute expenditure
+* Use managed services to reduce cost of ownership
+* Trade capital expense for operating expense
+* Benefit from economies of scale
+* Stop spending moeny on data center operations
+
+### Pillar Four - Cost Optimization Definition
+Cost optimization in the cloud consists of four areas:
+1. Matched supply and demand
+2. Cost-effective resources
+3. Expenditure awareness
+4. Optimizing over time
+
+### Pillar Four - Best Practices - Matched Supply and Demand
+Try to optimally align supply with demand. Don't over or under provision, instead as demand grows, so should your supply of compute resources. Think of things like autoscaling which scale with demand. Similarly in a server-less context, use services such as Lambda that only execute when a requests comes in.
+
+### Pillar Four - Best Practices - Matched Supply and Demand Questions
+* How do you make sure your capacity matches but does not substantially exceed what you need?
+* How are you optimizing your usage of AWS services?
+
+### Pillar Four - Best Practices - Cost-effective Resources
+Using the correct instance type can be key to cost savings.
+
+### Pillar Four - Best Practices - Cost-effective Resources Questions
+* Have you selected the appropriate resource types to meet your cost targets?
+* Have you selected the appropriate pricing model to meet your cost targets?
+* Are there managed services (higher-level services than EC2, EBS, and S3) that you can use to improve your ROI?
+
+### Pillar Four - Best Practices - Expenditure Awareness
+You no longer have to go out and get quotes oin physical servers, choose a supplier, have those resources delivered, installed, and made available with cloud. You can provision things within seconds. However, this comes with issues as many organizations have different teams, each with their own AWS accounts. Being aware of what each team is spending and where is crucial to any well architected system. You can use cost allocation tags to track this, billing alerts as well as consolidated billing.
+
+### Pillar Four - Best Practices - Expenditure Awareness Questions
+* What access controls and procedures do you have in place to govern AWS costs?
+* How are you monitoring usage and spending?
+* How do you decomission resources that you no longer need, or stop resources that are temporarily not needed?
+* How do you consider data-transfer charges when designing your architecture?
+
+### Pillar Four - Best Practices - Optimizing Over Time
+AWS moves fast. There are hundreds of new services. A service that you chose yesterday may not be the best service to be using today. You should keep track of the changes made to AWS and constantly re-evaluate your existing architecture.
+
+### Pillar Four - Best Practices - Optimizing Over Time Questions
+* How do you manage and/or consider the adoption of new services?
+
+### Pillar Four - Key AWS Services
+* Matched supply and demand
+  * Autoscaling
+* Cost-effective resources
+  * EC2 (reserved instances), AWS trusted advisor
+* Expenditure awareness
+  * CloudWatch Alarms, SNS
+* Optimizing over time
+  * AWS blog, AWS trusted advisor
+
+### Pillar Four - Cost Optimization Exam Tips
+Cost optimization in the cloud consists of four areas:
+1. Matched supply and demand
+2. Cost-effective resources
+3. Expenditure awareness
+4. Optimizing over time
+
+Also review each questions section within Pillar Four.
