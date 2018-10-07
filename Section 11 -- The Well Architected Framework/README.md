@@ -213,3 +213,89 @@ Reliability in the cloud consists of three areas:
 * Failure management
 
 Also review each questions section within Pillar Two.
+
+### Pillar Three - The Performance Efficiency Pillar
+The performance efficiency pillar focuses on how to use computing resources efficiently to meet your requirements and how to maintain that efficiency as demand changes and technology evolves.
+
+### Pillar Three - Performance Efficiency Design Principles
+* Democratize advanced techonologies
+* Go global in minutes
+* Use server-less architectures
+* Experiment more often
+
+### Pillar Three - Performance Efficiency Definition
+Performance efficiency in the cloud consists of four areas:
+1. Compute
+2. Storage
+3. Database
+4. Space-time trade-off
+
+### Pillar Three - Best Practices - Compute
+* When architecting your system it is important to choose the right kind of server. Some applications require heavy CPU utilization, some require heavy memory utilization, etc
+
+* AWS servers are virtualized and at the click of a button (or API call). You can change the type of server in which your environment is running on. You can even switch to running with no servers at all and use AWS Lambda
+
+### Pillar Three - Best Practices - Compute Questions
+* How do you select the appropriate instance type for your system?
+* How do you ensure that you continue to have the most appropriate instance type as new instance types and features are introduced?
+* How do you monitor your instances post launch to ensure they are performing as expected?
+* How do you ensure that the quantity of your instances matches demand?
+
+### Pillar Three - Best Practices - Storage
+The optimal storage solutions for your environment depends on a number of factors. For example:
+* Access method - block, file or object
+* Patterns of access - random or sequential
+* Throughput required
+* Frequency of access - online, offline or archival
+* Frequency of update - worm, dynamic
+* Availability constraints
+* Durability constraints
+
+* At AWS the storage is virtualized. In S3 you can have 11 x 9's durability, cross region replication, etc. In EBS you can choose between different storage mediums (such as SSD, magnetic, PIOPS, etc). You can also easily move volumes between the different types of storage mediums
+
+### Pillar Three - Best Practices - Storage Questions
+* How do you select the appropriate storage solution for your system?
+* How do you ensure that you continue to have the most appropriate storage solution as new storage solutions and features are launched?
+* How do you monitor your storage solution to ensure it is performing as expected?
+* How do you ensure that the capacity and throughput of your storage solutions matches demand?
+
+### Pillar Three - Best Practices - Database
+* The optimal database solution depends on a number of factors, do you need database consistency, do you need high availability, do you need No-SQL, do you need DR etc?
+* You get a lot of options in AWS; RDS, DynamoDB, Redshift, etc
+
+### Pillar Three - Best Practices - Database Questions
+* How do you select the appropriate database solution for your system?
+* How do you ensure that you continue to have the most appropriate database solution and features as new database solution and features are launched?
+* How do you monitor your databases to ensure performance is as expected?
+* How do you ensure the capacity and throughput of your databases matches demand?
+
+### Pillar Three - Best Practices - Space-time Trade-off
+* You can use services such as RDS to add read replicas, reducing the load on your database and creating multiple copies of the database. This helps to lower latency
+* You can use Direct Connect to provide predictable latency between your HQ and AWS
+* You can use the global infrastructure to have multiple copies of your environment, in regions that is closest to your customer base
+* You can also use caching services such as ElastiCache or CloudFront to reduce latency
+
+### Pillar Three - Best Practices - Space-time Trade-off Questions
+* How do you select the appropriate proximity and caching solutions for your system?
+* How do you ensure that you continue to have the most appropriate proximity and caching solutions as new solutions are launched?
+* How do you monitor your proximity and caching solutions to ensure performance is as expected?
+* How do you ensure that the proximity and caching solutions you have matches demand?
+
+### Pillar Three - Key AWS Services
+* Compute
+  * Autoscaling
+* Storage
+  * EBS, S3, Glacier
+* Database
+  * RDS, DynamoDB, Redshift
+* Space-time Trade-off
+  * CloudFront, ElastiCache, Direct Connect, RDS Read Replicas, etc.
+
+### Pillar Three - Performance Efficiency Exam Tips
+Performance efficiency in the cloud consists of four areas:
+1. Compute
+2. Storage
+3. Database
+4. Space-time trade-off
+
+Also review each questions section within Pillar Three.
