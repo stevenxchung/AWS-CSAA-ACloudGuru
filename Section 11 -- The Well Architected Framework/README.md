@@ -526,3 +526,78 @@ Review each "Exam Tips" section in each pillar as well as the "Questions" sectio
 
 **28. If an Amazon EBS volume is an additional partition (ie not the root volume) , can I detach it without stopping the instance?**
 * Yes, although it may take some time
+
+**29. Every user you create in the IAM systems starts with _____**
+* No Permissions
+
+**30. You can RDP or SSH in to an RDS instance to see what is going on with the operating system.**
+* False
+
+**31. When creating a new security group, all in bound traffic is allowed by default.**
+* False
+
+**32. To save administration headaches, Amazon recommend that you leave all security groups in web facing subnets open on port 22 to 0.0.0.0/0 CIDR, that way you can connect where ever you are in the world.**
+* Incorrect
+
+**33. What are the four levels of AWS premium support?**
+* Basic, Developer, Business, Enterprise
+
+**34. As the AWS platform is PCI DSS 1.0 compliant, I can immediately deploy a website to it that can take and store credit card details. I do not need to get any kind of delta accredditaion from a QSA.**
+* False
+
+**35. To help you manage your Amazon EC2 instances you can assign your own metadata in the form of:**
+* Tags
+
+**36. Which statement best describes Availability Zones?**
+* Distinct locations within an AWS region that are engineered to be isolated from failures
+
+**37. The service to allow Big Data Processing on the AWS platform is known as AWS "Elastic Big Data".**
+* False
+
+**38. Individual instances are provisioned in:**
+* Availability Zones
+
+**39. When using a custom VPC and placing an EC2 instance in to a public subnet, it will be automatically internet accessible (ie you do not need to apply an elastic IP address or ELB to the instance).**
+* False
+
+**40. What is the underlying Hypervisor for EC2?**
+* Xen
+
+**41. The AWS platform is certified PCI DSS 1.0 compliant**
+* True
+
+**42. The AWS platform consists of how many regions currently?**
+* 14
+
+**43. How many copies of my data does RDS - Aurora store by default?**
+* 6
+
+**44. Amazon's product debut conference is held in Las Vegas each year and is known as:**
+* Re-Invent
+
+**45. What is the difference between Elastic Beanstalk & CloudFormation?**
+* Elastic Beanstalk automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring based on the code you upload to it, where as CloudFormation is an automated provisioning engine designed to deploy entire cloud environments via a JSON script
+
+**46. In RDS, you are responsibly for maintaining OS & Application security patching, antivirus etc.**
+* False
+
+**47. What is the maximum response time for a Business Level Premium Support Case?**
+* 1 Hour
+
+**48. When I create a new security group, all outbound traffic is allowed by default.**
+* True
+
+**49. What types of RDS databases are currently available?**
+* Oracle, SQL, MySQL, Postgres
+
+**50. I can enable multifactor authentication by using:**
+* IAM
+
+**51. When deploying databases on your own EC2 instances, it is recommended that you deploy these on magnetic storage rather than SSD storage as you get better performance.**
+* False
+
+**52. AWS DNS service is known as:**
+* Route 53
+
+**53. Auditing user access/API calls etc across the entire AWS estate can be achieved by using:**
+* CloudTrail
