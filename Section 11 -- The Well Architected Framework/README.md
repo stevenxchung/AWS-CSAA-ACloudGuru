@@ -437,3 +437,92 @@ There are three best practice areas for operational excellence in the cloud:
 * Response
 
 Also review each questions section within Pillar Five.
+
+### Summary of The Well Architected Framework
+Review each "Exam Tips" section in each pillar as well as the "Questions" section in each pillar.
+
+## Section 11 Quiz (Mega Quiz)
+
+**1. Amazon SWF is designed to help users:**
+* Coordinate synchronous and asynchronous tasks
+
+**2. In RDS, what is the maximum value I can set for my backup retention period?**
+* 35 Days
+
+**3. Automated backups are enabled by default for a new DB Instance?**
+* True
+
+**4. Amazon RDS does not currently support increasing storage on a ____ Db instance**
+* SQL Server
+
+**5. In what circumstances would I choose provisioned IOPS in RDS over standard storage?**
+* If you use production online transaction processing
+
+**6. Amazon's S3 is:**
+* Object based storage
+
+**7. In S3 with RRS the availability is:**
+* 99.99%
+
+**8. Amazon's EBS volumes are:**
+* Blocked based storage
+
+**9. If I want to run a database on an EC2 instance, which is the most recommended Amazon storage option?**
+* EBS
+
+**10. In S3 the durability of my files is:**
+* 99.999999999%
+
+**11. Can you access Amazon EBS Snapshots?**
+* Yes, through the AWS APIs/CLI and AWS console
+
+**12. A __________ is a document that provides a formal statement of one or more permissions.**
+* Policy
+
+**13. In a default VPC, all Amazon EC2 instances are assigned 2 IP addresses at launch, what are these?**
+* Private IP address and public IP address
+
+**14. If an Amazon EBS volume is the root device of an instance, can I detach it without stopping the instance?**
+* No
+
+**15. If you want your application to check whether a request generated an error then you look for an ______ node in the response from the Amazon RDS API**
+* Error
+
+**16. EC2 instances can have credentials stored on them so that the instances can access other resources (such as S3 buckets) and AWS recommends that you do this instead of assigning roles.**
+* False
+
+**17. Can I move a reserved instance from one region to another?**
+* No
+
+**18. In S3 RRS the durability of my files is:**
+* 99.99%
+
+**19. In RDS, changes to the backup window take effect:**
+* Immediately
+
+**20. In RDS what is the maximum size for a Microsoft SQL Server DB Instance with SQL Server Express edition?**
+* 10 GB per database
+
+**21. In S3 what does RRS stand for?**
+* Reduced Redundancy Storage
+
+**22. Can I "force" a failover for any RDS instance that has Multi-AZ configured?**
+* Yes
+
+**23. What does EBS stand for?**
+* Elastic Block Storage
+
+**24. You can conduct your own vulnerability scans within your own VPC without alerting AWS first?**
+* False
+
+**25. Reserved instances are available for multi-AZ deployments.**
+* True
+
+**26. Amazon's Glacier service is a Content Distribution Network which integrates with S3.**
+* False
+
+**27. MySQL installations default to port number:**
+* 3306
+
+**28. If an Amazon EBS volume is an additional partition (ie not the root volume) , can I detach it without stopping the instance?**
+* Yes, although it may take some time
