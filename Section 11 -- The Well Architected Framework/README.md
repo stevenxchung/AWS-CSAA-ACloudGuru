@@ -365,3 +365,75 @@ Cost optimization in the cloud consists of four areas:
 4. Optimizing over time
 
 Also review each questions section within Pillar Four.
+
+### Pillar Five - Operational Excellence Pillar
+* The operational excellence pillar includes operational practices and procedures used to manage production workloads
+* This includes how planned changes are executed, as well as responses to unexpected operational events
+* Change execution and responses should be automated. All processes and procedures of operational excellence should be documented tested, and regularly reviewed
+
+### Pillar Five - Operational Excellence Design Principles
+* Perform operations with code
+* Align operations processes to business objectives
+* Make regular, small, incremental changes
+* Test for responses to unexpected events
+* Learn from operational events and failure
+* Keep operation procedures current
+
+### Pillar Five - Operational Excellence Definition
+There are three best practice areas for operational excellence in the cloud:
+* Preparation
+* Operation
+* Response
+
+### Pillar Five - Best Practices - Preparation
+* Effective preparation is required to drive operational excellence
+* Operation checklists will ensure that workloads are ready for production
+* Operation and prevent unintentional production promotion without effective preparation
+* Workloads should have:
+  * Runbooks - operations guidance that operation teams can refer to so they can perform normal daily tasks
+  * Playbooks guidance for responding to unexpected operational events. Playbooks should include response plans, as well as escalation paths and stakeholder notifications
+
+* CloudFormation can be used to ensure that environments contain all required resources when deployed in production and that the configuration of the environment is based on tested best practices, which reduces the opportunity for human error
+
+* Implementing auto scaling, or other automated scaling mechanisms, will allow workloads to automatically respond when business-related events affect operational needs
+* Services like AWS Config with the AWS Config rules feature create mechanisms to automatically track and respond to changes in your AWS workloads and environments
+* It is also important to use feature like tagging to make sure all resources in a workload can be easily identified when needed during operations and responses
+
+### Pillar Five - Best Practices - Preparation Questions
+The following questions focus on preparation considerations for operational excellence:
+* What best practices for cloud operations are you using?
+* How are you doing configuration management for your workload?
+
+### Pillar Five - Best Practices - Operations
+* Operations should be standardized and manageable on a routine basis. The focus should be on automation, small frequent changes, regular quality assurance testing, and defined mechanisms to track, audit, rollback, and review changes. Changes should not be large and infrequent, they should not require scheduled downtime, and they should not require manual execution. A wide range of logs and metrics that are based on key operational indications for a workload should be collected and reviewed to ensure continuous operations
+
+* In AWS you can set up a continuous integration/continuous deployment (CI/CD) pipeline. Release management processes, whether manual or automated, should be tested and be based on small incremental changes, and tracked versions. You should be able to revert changes that introduce operational issues without causing operational impact
+
+### Pillar Five - Best Practices - Operations Questions
+The following questions focus on operations considerations for operational excellence:
+* How are you evolving your workload while minimizing the impact of change?
+* How do you monitor your workload to ensure it is operating as expected?
+
+### Pillar Five - Best Practices - Responses
+* Responses to unexpected operational events should be automated. This is not just for alerting but also for mitigation, remediation, rollback, and recovery
+* In AWS, there are several mechanisms to ensure both appropriate alerting and notification in response to unplanned operational events, as well as automated responses
+
+### Pillar Five - Best Practices - Responses Questions
+The following questions focus on operations considerations for operational excellence:
+* How do you respond to unplanned operational events?
+* How is escalation managed when responding to unplanned operational events?
+
+### Pillar Five - Key AWS Services
+**Preparation**: AWS Config provides a detailed inventory of your AWS resources and configuration, and continuously records configuration changes. AWS Service Catalog helps to create a standardized set of service offerings that are aligned to best practices. Designing workloads that use automation with services like Auto Scaling and SQS are good methods to ensure continuous operations in the event of unexpected operational events.
+
+**Operations**: AWS CodeCommit, CodeDeploy, and CodePipeline can be used to manage and automate code changes to AWS workloads. Use AWS SDKs or third-party libraries to automate operational changes. Use AWS CloudTrail to audit and track changes made to AWS environments.
+
+**Reponses**: CloudWatch alarams can be used to set thresholds for alerting and notification. CloudWatch events can trigger notifications and automated responses.
+
+### Pillar Five - Operational Excellence Exam Tips
+There are three best practice areas for operational excellence in the cloud:
+* Preparation
+* Operation
+* Response
+
+Also review each questions section within Pillar Five.
