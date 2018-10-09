@@ -27,11 +27,11 @@ This section will cover an in-depth overview on AWS Application Services.
 Rule of thumb: be a pessimist when designing architectures in the cloud; assume things will fail. In other words, always design, implement and deploy for automated recovery from failure.
 
 ### Decouple Your Components
-The key is to build components that do not have tight dependencies on each other, so that if one component were to die, sleep, or reamin busy for some reason, the other components in the system are built so as to continue to work as if no failure is happening.
+The key is to build components that do not have tight dependencies on each other, so that if one component were to die, sleep, or remain busy for some reason, the other components in the system are built so as to continue to work as if no failure is happening.
 
 ### Implement Elasticity
 The cloud brings a new concept of elasticity in your applications. Elasticity can be implemented in three ways:
-1. Proactive cyclic scaling: periodic scaling that occurs at fixed interval (daily, weekly, monthly, quarterly)
+1. Proactive cyclic scaling: periodic scaling that occurs at fixed interval (daily, weekly, monthly, and quarterly)
 2. Proactively event-based scaling: scaling just when you are expecting a big surge of traffic requests due to a scheduled business event (new product launch, marketing campaigns)
 3. Auto-scaling based on demand. By using a monitoring service, your system can send triggers to take appropriate actions so that it scales up or down based on metrics (utilization of the servers or network i/o for instance)
 
@@ -44,7 +44,7 @@ Depending on your setup, securing your application is important, see Figure 11-2
 </div>
 
 ### What is a well architected framework?
-This has been developed by the Solution Architecture team based on their experience with helping AWS customers. The well architected framework is a set of questions that you can use to evalute how well your architecture is aligned to AWS best practices.
+This has been developed by the Solution Architecture team based on their experience with helping AWS customers. The well architected framework is a set of questions that you can use to evaluate how well your architecture is aligned to AWS best practices.
 
 ### Five Pillars of The Well-Architected Framework
 * Security
@@ -91,7 +91,7 @@ Security in the cloud consist of 4 areas:
 4. Detective controls
 
 ### Pillar One - Best Practices - Data Protection
-* Before you begin to architect security practices across your environment, basic data classification should be in place. You should organize and classify your data into segments. You should implement a least priviledge access system so that people are only able to access what they need. However, most importantly you should encrypt everything where possible, whether it be at rest or in transit.
+* Before you begin to architect security practices across your environment, basic data classification should be in place. You should organize and classify your data into segments. You should implement a least privilege access system so that people are only able to access what they need. However, most importantly you should encrypt everything where possible, whether it be at rest or in transit.
 
 * In AWS the following practices help to protect your data:
   * AWS customers maintain full control over their data
@@ -105,13 +105,13 @@ Security in the cloud consist of 4 areas:
 * How are you encrypting and protecting your data at rest?
 * How are you encrypting and protecting your data in transit? (SSL)
 
-### Pillar One - Best Practices - Priviledge Management
+### Pillar One - Best Practices - Privilege Management
 Privilege management ensures that only authorized and authenticated users are able to access your resources, and only in a manner that is intended. It can include:
 * ACLs (Access Control Lists)
 * Role-based access controls
 * Password management (such as password rotation policies)
 
-### Pillar One - Best Practices - Priviledge Management Questions
+### Pillar One - Best Practices - Privilege Management Questions
 * How are you protecting access to and use of the AWS root account credentials
 * How are you defining roles and responsibilities of system users to control human access to the AWS management console and APIs?
 * How are you limiting automated access (such as from applications, scripts, or third-party tools or services) to AWS resources?
@@ -139,7 +139,7 @@ You can use detective controls to detect or identify a security breach. AWS serv
 ### Pillar One - Key AWS Services
 * Data protection
   * You can encrypt you data both in transit and at rest using EBS, S3, and RDS
-* Priviledge management
+* Privilege management
   * IAM, MFA
 * Infrastructure protection
   * VPC
@@ -156,7 +156,7 @@ Security in the cloud consist of 4 areas:
 Also review each questions section within Pillar One.
 
 ### Pillar Two - The Reliability Pillar
-The reliability pillar covers the ability of a system to recover from service or infrastructure outages/distruptions as well as the ability to dynamically acquire computing resources to meet demand.
+The reliability pillar covers the ability of a system to recover from service or infrastructure outages/disruptions as well as the ability to dynamically acquire computing resources to meet demand.
 
 ### Pillar Two - Reliability Design Principles
 * Test recovery procedures
@@ -171,19 +171,19 @@ Reliability in the cloud consists of three areas:
 * Failure management
 
 ### Pillar Two - Best Practices - Foundations
-* Before architecting any system, you need to make sure you have the prerequisite foundations. In traditional IT one of the first things you should consider is the size of the comms link between your HQ and your data center. If you misprovision this link, it can take three to six months to upgrade which can cause a huge disruption to your traditional IT estate
+* Before architecting any system, you need to make sure you have the prerequisite foundations. In traditional IT one of the first things you should consider is the size of the communications link between your HQ and your data center. If you under evaluate this link, it can take three to six months to upgrade which can cause a huge disruption to your traditional IT estate
 
 * AWS handles most of the foundations for you. The cloud is designed to be essentially limitless meaning that AWS handle the networking can compute requirements themselves. However, they do set service limits to stop customers from accidentally over-provisioning resources
 
 ### Pillar Two - Best Practices - Foundations Questions
-* How are you managing AWS service limits for you account?
+* How are you managing AWS service limits for your account?
 * How are you planning your network topology on AWS?
 * Do you have an escalation path to deal with technical issues?
 
 ### Pillar Two - Best Practices - Change Management
-* You need to be aware of how change affects a system so that you can plan proactively around it. Monitoring allows you to detect any changes to your environment and react. In traditional systems, change control is done manually and are carefully co-ordinated with auditing
+* You need to be aware of how change affects a system so that you can plan proactively around it. Monitoring allows you to detect any changes to your environment and react. In traditional systems, change control is done manually and are carefully coordinated with auditing
 
-* AWS makes things a lot easier, you can use CloudWatch to monitor your environment and services such as autoscaling to automate change in response to changes on your production environment
+* AWS makes things a lot easier, you can use CloudWatch to monitor your environment and services such as auto scaling to automate change in response to changes on your production environment
 
 ### Pillar Two - Best Practices - Change Management Questions
 * How does your system adapt to changes in demand?
@@ -218,7 +218,7 @@ Also review each questions section within Pillar Two.
 The performance efficiency pillar focuses on how to use computing resources efficiently to meet your requirements and how to maintain that efficiency as demand changes and technology evolves.
 
 ### Pillar Three - Performance Efficiency Design Principles
-* Democratize advanced techonologies
+* Democratize advanced technologies
 * Go global in minutes
 * Use server-less architectures
 * Experiment more often
@@ -260,7 +260,7 @@ The optimal storage solutions for your environment depends on a number of factor
 * How do you ensure that the capacity and throughput of your storage solutions matches demand?
 
 ### Pillar Three - Best Practices - Database
-* The optimal database solution depends on a number of factors, do you need database consistency, do you need high availability, do you need No-SQL, do you need DR etc?
+* The optimal database solution depends on a number of factors, do you need database consistency, do you need high availability, do you need No-SQL, and do you need DR etc?
 * You get a lot of options in AWS; RDS, DynamoDB, Redshift, etc
 
 ### Pillar Three - Best Practices - Database Questions
@@ -283,7 +283,7 @@ The optimal storage solutions for your environment depends on a number of factor
 
 ### Pillar Three - Key AWS Services
 * Compute
-  * Autoscaling
+  * Auto scaling
 * Storage
   * EBS, S3, Glacier
 * Database
@@ -308,7 +308,7 @@ Use the cost optimization pillar to reduce your costs to a minimum and use those
 * Use managed services to reduce cost of ownership
 * Trade capital expense for operating expense
 * Benefit from economies of scale
-* Stop spending moeny on data center operations
+* Stop spending money on data center operations
 
 ### Pillar Four - Cost Optimization Definition
 Cost optimization in the cloud consists of four areas:
@@ -318,7 +318,7 @@ Cost optimization in the cloud consists of four areas:
 4. Optimizing over time
 
 ### Pillar Four - Best Practices - Matched Supply and Demand
-Try to optimally align supply with demand. Don't over or under provision, instead as demand grows, so should your supply of compute resources. Think of things like autoscaling which scale with demand. Similarly in a server-less context, use services such as Lambda that only execute when a requests comes in.
+Try to optimally align supply with demand. Don't over or under provision, instead as demand grows, so should your supply of compute resources. Think of things like auto scaling which scale with demand. Similarly in a server-less context, use services such as Lambda that only execute when a requests comes in.
 
 ### Pillar Four - Best Practices - Matched Supply and Demand Questions
 * How do you make sure your capacity matches but does not substantially exceed what you need?
@@ -333,12 +333,12 @@ Using the correct instance type can be key to cost savings.
 * Are there managed services (higher-level services than EC2, EBS, and S3) that you can use to improve your ROI?
 
 ### Pillar Four - Best Practices - Expenditure Awareness
-You no longer have to go out and get quotes oin physical servers, choose a supplier, have those resources delivered, installed, and made available with cloud. You can provision things within seconds. However, this comes with issues as many organizations have different teams, each with their own AWS accounts. Being aware of what each team is spending and where is crucial to any well architected system. You can use cost allocation tags to track this, billing alerts as well as consolidated billing.
+You no longer have to go out and get quotes in physical servers, choose a supplier, have those resources delivered, installed, and made available with cloud. You can provision things within seconds. However, this comes with issues as many organizations have different teams, each with their own AWS accounts. Being aware of what each team is spending and where is crucial to any well architected system. You can use cost allocation tags to track this, billing alerts as well as consolidated billing.
 
 ### Pillar Four - Best Practices - Expenditure Awareness Questions
 * What access controls and procedures do you have in place to govern AWS costs?
 * How are you monitoring usage and spending?
-* How do you decomission resources that you no longer need, or stop resources that are temporarily not needed?
+* How do you decommission resources that you no longer need, or stop resources that are temporarily not needed?
 * How do you consider data-transfer charges when designing your architecture?
 
 ### Pillar Four - Best Practices - Optimizing Over Time
@@ -349,7 +349,7 @@ AWS moves fast. There are hundreds of new services. A service that you chose yes
 
 ### Pillar Four - Key AWS Services
 * Matched supply and demand
-  * Autoscaling
+  * Auto scaling
 * Cost-effective resources
   * EC2 (reserved instances), AWS trusted advisor
 * Expenditure awareness
@@ -428,7 +428,7 @@ The following questions focus on operations considerations for operational excel
 
 **Operations**: AWS CodeCommit, CodeDeploy, and CodePipeline can be used to manage and automate code changes to AWS workloads. Use AWS SDKs or third-party libraries to automate operational changes. Use AWS CloudTrail to audit and track changes made to AWS environments.
 
-**Reponses**: CloudWatch alarams can be used to set thresholds for alerting and notification. CloudWatch events can trigger notifications and automated responses.
+**Reponses**: CloudWatch alarms can be used to set thresholds for alerting and notification. CloudWatch events can trigger notifications and automated responses.
 
 ### Pillar Five - Operational Excellence Exam Tips
 There are three best practice areas for operational excellence in the cloud:
@@ -524,7 +524,7 @@ Review each "Exam Tips" section in each pillar as well as the "Questions" sectio
 **27. MySQL installations default to port number:**
 * 3306
 
-**28. If an Amazon EBS volume is an additional partition (ie not the root volume) , can I detach it without stopping the instance?**
+**28. If an Amazon EBS volume is an additional partition (i.e. not the root volume), can I detach it without stopping the instance?**
 * Yes, although it may take some time
 
 **29. Every user you create in the IAM systems starts with _____**
@@ -542,7 +542,7 @@ Review each "Exam Tips" section in each pillar as well as the "Questions" sectio
 **33. What are the four levels of AWS premium support?**
 * Basic, Developer, Business, Enterprise
 
-**34. As the AWS platform is PCI DSS 1.0 compliant, I can immediately deploy a website to it that can take and store credit card details. I do not need to get any kind of delta accredditaion from a QSA.**
+**34. As the AWS platform is PCI DSS 1.0 compliant, I can immediately deploy a website to it that can take and store credit card details. I do not need to get any kind of delta accreditation from a QSA.**
 * False
 
 **35. To help you manage your Amazon EC2 instances you can assign your own metadata in the form of:**
@@ -557,7 +557,7 @@ Review each "Exam Tips" section in each pillar as well as the "Questions" sectio
 **38. Individual instances are provisioned in:**
 * Availability Zones
 
-**39. When using a custom VPC and placing an EC2 instance in to a public subnet, it will be automatically internet accessible (ie you do not need to apply an elastic IP address or ELB to the instance).**
+**39. When using a custom VPC and placing an EC2 instance in to a public subnet, it will be automatically internet accessible (i.e. you do not need to apply an elastic IP address or ELB to the instance).**
 * False
 
 **40. What is the underlying Hypervisor for EC2?**
@@ -576,9 +576,9 @@ Review each "Exam Tips" section in each pillar as well as the "Questions" sectio
 * Re-Invent
 
 **45. What is the difference between Elastic Beanstalk & CloudFormation?**
-* Elastic Beanstalk automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring based on the code you upload to it, where as CloudFormation is an automated provisioning engine designed to deploy entire cloud environments via a JSON script
+* Elastic Beanstalk automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring based on the code you upload to it, whereas CloudFormation is an automated provisioning engine designed to deploy entire cloud environments via a JSON script
 
-**46. In RDS, you are responsibly for maintaining OS & Application security patching, antivirus etc.**
+**46. In RDS, you are responsible for maintaining OS & Application security patching, antivirus etc.**
 * False
 
 **47. What is the maximum response time for a Business Level Premium Support Case?**
