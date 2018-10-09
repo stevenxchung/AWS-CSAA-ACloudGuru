@@ -1251,7 +1251,7 @@ Relational databased are what most of us are all used to. They have been around 
 * Fields (columns)
 
 <div align="center">
-  <img src="relational-db.jpg">
+  <img src="Section 07 -- Databases on AWS/relational-db.jpg">
   <h3>Figure 7-1. Example of a traditional relational database</h3>
 </div>
 
@@ -1272,7 +1272,7 @@ A non-relational database consists of the following:
   * Key value pairs -> Fields
 
 <div align="center">
-  <img src="non-relational-db.jpg">
+  <img src="Section 07 -- Databases on AWS/non-relational-db.jpg">
   <h3>Figure 7-2. Example of a non-relational database</h3>
 </div>
 
@@ -1335,7 +1335,7 @@ Whenever you restore either an automatic backup or a manual Snapshot, the restor
 Any changes to an RDS in US-EAST-1A for example will be synchronously replicated in another instance in US-EAST-1B for example where US-EAST-1B is an exact copy of US-EAST-1A.
 
 <div align="center">
-  <img src="multi-az.jpg">
+  <img src="Section 07 -- Databases on AWS/multi-az.jpg">
   <h3>Figure 7-3. Example of a Multi-AZ setup for AWS RDS</h3>
 </div>
 
@@ -1356,7 +1356,7 @@ Multi-AZ databases are available for the following:
 Read replicas allow you to have a read-only copy of your production database. This is achieved by using asynchronous replication from the primary RDS instance to the read replica. You use read replicas primarily for very read-heavy database workloads.
 
 <div align="center">
-  <img src="read-replica.jpg">
+  <img src="Section 07 -- Databases on AWS/read-replica.jpg">
   <h3>Figure 7-4. Example of a read replica (depicted in blue) setup on AWS</h3>
 </div>
 
@@ -1514,7 +1514,7 @@ This section will cover an in-depth overview on AWS VPC.
 Think of a VPC (Virtual Private Cloud) as a virtual data center in the cloud. A VPC lets you provision a logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define. You have complete control over you virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways.
 
 <div align="center">
-  <img src="aws-vpc.jpg">
+  <img src="Section 08 -- VPC/aws-vpc.jpg">
   <h3>Figure 8-1. Diagram of a VPC setup on AWS</h3>
 </div>
 
@@ -1850,7 +1850,7 @@ This section will cover an in-depth overview on AWS Application Services.
 * "Overflow" the traffic to the cloud
 
 <div align="center">
-  <img src="elasticity.jpg">
+  <img src="Section 11 -- The Well Architected Framework/elasticity.jpg">
   <h3>Figure 11-1. Infrastructure cost vs time</h3>
 </div>
 
@@ -1870,7 +1870,7 @@ The cloud brings a new concept of elasticity in your applications. Elasticity ca
 Depending on your setup, securing your application is important, see Figure 11-2 on application security at different levels of the application.
 
 <div align="center">
-  <img src="secure-app.jpg">
+  <img src="Section 11 -- The Well Architected Framework/secure-app.jpg">
   <h3>Figure 11-2. Application security at different levels</h3>
 </div>
 
@@ -1910,7 +1910,7 @@ This has been developed by the Solution Architecture team based on their experie
 Shown in Figure 11-3 is the AWS shared responsibility model between AWS and the customer. Although the scope of responsibility differs for AWS vs the customer, each party has equal responsibility in securing data.
 
 <div align="center">
-  <img src="aws-shared-res.jpg">
+  <img src="Section 11 -- The Well Architected Framework/aws-shared-res.jpg">
   <h3>Figure 11-3. AWS shared responsibility model</h3>
 </div>
 
