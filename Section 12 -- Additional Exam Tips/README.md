@@ -1,0 +1,182 @@
+# Section 12: Additional Exam Tips
+
+This section will cover additional exam tips from previous sections.
+
+### What is Kinesis?
+* Amazon Kinesis is a fully managed service for real-time processing of streaming data at massive scale. You can configure hundreds of thousands of data producers to continuously put data into an Amazon Kinesis stream
+
+* Think Kinesis when:
+    * Consuming big data
+    * Stream large amounts of social media, news feeds logs, etc. into the cloud
+
+* Process large amounts of data:
+    * Redshift for business intelligence
+    * Elastic map reduce for big data processing
+
+### EC2 - EBS Backed vs Instance Store
+* EBS backed volumes are persistent
+* Instance Store backed volumes are not persistent (ephemeral)
+* EBS volumes can be detached and reattached to other EC2 instances
+
+* Instance store volume cannot be detached and reattached to other instances - they exist only for the life of that instance
+* EBS volumes can be stopped; data will persist
+
+* Instance store volumes cannot be stopped - if you do this the data will be wiped
+* EBS backed = store data long-term
+* Instance store = should not be used for long-term data storage
+
+### OpsWorks
+* Orchestration Services that uses Chef
+* Chef consists of recipes to maintain a consistent state
+* Look for the term "chef" or "recipes" or "cook books" and think OpsWorks
+
+### Elastic Transcoder
+* Media transcoder in the cloud
+* Convert media files from their original source format into different formats that will play on smartphones, tablets, PC's, etc
+* Provides transcoding presets for popular output formats, which means that you do not need to guess about which setting work best on particular devices
+* Pay based on the minutes that you transcode and the resolution at which you transcode
+
+### SWF Actors
+* Workflow Starters - An application that can initiate a workflow
+* Deciders - Control the flow of activity tasks in a workflow execution
+* Activity Workers - Carry out the activity tasks
+
+### EC2 - Get Public IP Address
+* Need to query the instances metadata:
+    * curl http://169.254.169.254/latest/meta-data/
+    * wget http://169.254.169.254/latest/meta-data/
+    * Key thing to remember is that it is an instances **metadata** no user data
+
+### What is AWS Organizations?
+* AWS Organizations is an account management service that enables you to consolidate multiple AWS accounts into an organization that you create and centrally manage
+* Available in two feature sets:
+    * Consolidated billing
+    * All features
+
+### Advantages of Consolidated Billing
+* One bill per AWS account
+* Very easy to track charges and allocate costs
+* Volume pricing discount
+
+### AWS Ogranizations and Consolidated Billing - Best Practices
+* Always enable multi-factor authentication on root account
+* Always use a strong and complex password on root account
+* Pay account should be used for billing purposes only. Do not deploy resources in to paying account
+
+### AWS Ogranizations and Consolidated Billing - Notes
+* Linked accounts
+    * 20 linked accounts only
+* Billing alerts
+    * When monitoring is enabled on the paying account the billing data for all linked accounts is included
+    * You can still create billing alerts per individual account
+* CloudTrail
+    * Per AWS account and is enabled per region
+    * Can consolidate logs using an S3 bucket:
+        1. Turn on CloudTrail in the paying account
+        2. Create a bucket policy that allows cross account access
+        3. Turn on CloudTrail in the other accounts and use the bucket in the paying account
+
+### AWS Ogranizations and Consolidated Billing - Exam Tips
+* Consolidated billing allows you to get volume discounts on all your accounts
+* Unused reserved instances for EC2 are applied across the group
+* CloudTrail is on a per account and per region basis but can be aggregated into a single bucket in the paying account
+* AWS Organizations allows you to:
+    * Centrally manage policies across multiple AWS accounts
+    * Control access to AWS services
+    * Automate AWS account creation and management
+    * Consolidate billing across multiple AWS accounts
+
+### What is Cross Account Access?
+Cross account access makes it easier for you to work productively within a multi-account AWS environment by making it easy for you to switch roles within the AWS Management Console. You can now sign into the console using your IAM user name then switch the console to manage another account without having to enter another username and password.
+
+### What are Tags?
+* Key value pairs attached to AWS resources
+* Metadata (data about data)
+* Tags can sometiems be inherited
+    * Autoscaling, CloudFormation, and Elastic Beanstalk can create other resources
+
+### What are resource groups?
+* Resource groups make it easy to group your resources using the tags that are assigned to them
+* Resource groups contain information such as:
+    * Region
+    * Name
+    * Health checks
+* Specific information
+    * For EC2 - Public and private IP addresses
+    * For ELB - Port configurations
+    * For RDS - Database eengine etc
+
+### AWS Resource Groups
+There are two types of AWS resource groups:
+* Classic resource groups
+* AWS systems manager
+
+### What is VPC Peering?
+* VPC Peering is simply a connection between two VPCs that enables you to route traffic between them using private IP addresses. Instances in either VPC can communicate with each other as if they are within the same network. You can create a VPC peering connection between your own VPCs, or with a VPC in another AWS account within a **single region**
+* AWS uses the existing infrastructure of a VPC to create a VPC peering connection; it is neither a gateway nor a VPN connection, and does not rely on a separate piece of physical hardware. There is no single point of failure for communication or a bandwidth bottleneck
+
+### VPC Peering Limitations
+* VPC peering does not support transitive peering relationships
+* You cannot create a VPC peering connection between VPCs in different regions
+* You cannot create a VPC peering connection between VPCs that have matching or overlapping CIDR blocks
+
+### Direct Connect
+AWS Direct Connect makes it easy to establish a dedicated network connection from your premises to AWS. Using AWS Direct Connect, you can establish private connectivity between AWS and your data center, office, or co-location environment, which in many cases can reduce your network costs, increase bandwidth throughput, and provide a more consistent network experience than internet-based connections.
+
+### Direct Connect Benefits
+* Increase bandwidth
+* Increate reliability
+* Reduce costs when using large volumes of traffic
+
+### How is Direct Connect different from a VPN?
+* VPN connections can be configured in minuites and are a good solution if you have an immediate need, have low to modest bandwidth requirements, and can tolerate the inherent variability in internet-based connectivity
+* AWS Direct Connect does not involve the internet; instead, it uses dedicated, private network connections between your intranet and Amazon VPC
+
+### Direct Connect Connections
+* Connections are available in:
+    * 1 Gbps
+    * 10 Gbps
+* Sub 1 Gbps can be purchased through AWS direct connect partners
+* Uses ethernet VLAN trunking (802.1Q)
+
+### Security Token Service (STS)
+* Grants users limited and temporary access to AWS resources. Users can come from three sources:
+    * Federation (typically Active Directory)
+        * Uses SAML (Security Assertion Markup Language)
+        * Single sing on allows users to log into AWS console without assigning IAM credentials
+        * Grants temporary access based off the users Active Directory credentials. Does not need to be a user in IAM
+    * Federation with Mobile Apps
+        * Use Facebook/Amazon/Google or other OpenID providers to log in
+    * Cross Account Access
+        * Lets users from one AWS account access resources in another
+
+### Understanding Key Terms
+* Federation
+    * Combining or joining a list of users in one domain (such as IAM) with a list of users in another domain (such as Active Directory, Facebook, etc)
+* Identity Broker
+    * A service that allows you to take an identity from point A and join it (federate it) to point B
+* Identity Store
+    * Services like Active Directory, Facebook, Google, etc
+* Identities
+    * A user of a service like Facebook, etc
+
+### STS - Exam Tips
+* Develop an Identity Broker to communicate with LDAP and AWS STS
+* Identity Broker always authenticates with LDAP first, **then** with AWS STS
+* Application then gets temporary access to AWS resources
+
+### Active Directory Integration
+* Can you authenticate with Active Directory?
+    * Yes, using SAML
+* Which is done first, SAML to authenticate against Active Directory or Active Directory then SAML credentials?
+    * We always authenicate with Active Directory first then receive the SAML
+
+### What is a Workspace?
+* A Workspace is a cloud-based replacement for a traditional desktop.
+* Quick facts:
+    * Workspaces are persistent
+    * All data on the D:\ is backed up every 12 hours
+    * You do not need an AWS account to login to workspaces
+    * Windows 7 experience provided by Windows Server 2008 R2
+    * By default, you will be given local admin access so you can install your own apps
+    * By default, users can personalize their workspaces but can be locked down by an admin
