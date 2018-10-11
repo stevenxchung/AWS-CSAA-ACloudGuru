@@ -320,3 +320,62 @@ AWS ECR (EC2 Container Registry) is a managed AWS Docker registry service that i
 * Security groups operate at the instance level not at the task or container level
 
 ## Section 12 Quiz
+**1. You are a solutions architect working for a company that specialises in ingesting large data feeds (using Kinesis) and then analysing these feeds using Elastic Map Reduce (EMR). The results are then stored on a custom MySQL database which is hosted on an EC2 instance which has 3 volumes, the root/boot volume, and then 2 additional volumes which are striped into a RAID-0 set. Your company recently had an outage and lost some key data and have since decided that they will need to run nightly back ups. Your application is only used during office hours, so you can afford to have some down time in the middle of the night if required. You decide to take a snapshot of all three volumes every 24 hours. In what manner should you do this?**
+* Stop the EC2 instance and take a snapshot of each EC2 instance independently. Once the snapshots are complete, start the EC2 instance and ensure that all relevant volumes are remounted
+
+**2. What are the valid methodologies for encrypting data on S3?**
+* Server Side Encryption (SSE)-S3, SSE-C, SSE-KMS, or a client library such as S3 Encryption Client
+
+**3. In Identity and Access Management, when you first create a new user, certain security credentials are automatically generated. Which of the below are valid security credentials?**
+* Access Key ID, Secret Access Key
+
+**4. Amazon Web Services offer 3 different levels of support, which of the below are valid support levels?**
+* Enterprise, Business, Developer
+
+**5. You are a solutions architect working for a large digital media company. Your company is migrating their production estate to AWS and you are in the process of setting up access to the AWS console using Identity Access Management (IAM). You have created 5 users for your system administrators. What further steps do you need to take to enable your system administrators to get access to the AWS console?**
+* Generate a password for each user created and give these passwords to your system administrators
+
+**6. Amazon S3 buckets in all Regions provide which of the following?**
+* Read-after-write consistency for PUTS of new objects AND Eventually consistent for overwrite PUTS & DELETES
+
+**7. What function of an AWS VPC is stateless?**
+* Network Access Control Lists
+
+**8. Which of the following services allows you root access (ie you can login using SSH)?**
+* Elastic Map Reduce
+
+**9. When trying to grant an amazon account access to S3 using access control lists what method of identification should you use to identify that account with?**
+* The email address of the account or the canonical user ID
+
+**10. You are a solutions architect working for a large oil and gas company. Your company runs their production environment on AWS and has a custom VPC. The VPC contains 3 subnets, 1 of which is public and the other 2 are private. Inside the public subnet is a fleet of EC2 instances which are the result of an autoscaling group. All EC2 instances are in the same security group. Your company has created a new custom application which connects to mobile devices using a custom port. This application has been rolled out to production and you need to open this port globally to the internet. What steps should you take to do this, and how quickly will the change occur?**
+* Open the port on the existing security group. Your EC2 instances will be able to communicate over this port immediately
+
+**11. Which of the following is not supported by AWS Import/Export?**
+* Export to Amazon Glacier
+
+**12. Which of the following is not a service of the security category of the AWS trusted advisor service?**
+* Vulnerability scans on existing VPCs
+
+**13. You work for a market analysis firm who are designing a new environment. They will ingest large amounts of market data via Kinesis and then analyse this data using Elastic Map Reduce. The data is then imported in to a high performance NoSQL Cassandra database which will run on EC2 and then be accessed by traders from around the world. The database volume itself will sit on 2 EBS volumes that will be grouped into a RAID 0 volume. They are expecting very high demand during peak times, with an IOPS performance level of approximately 15,000. Which EBS volume should you recommend?**
+* Provisioned IOPS (PIOPS)
+
+**14. What are the different types of virtualization available on EC2?**
+* Para-Virtual (PV) & Hardware Virtual Machine (HVM)
+
+**15. Which of the following is not a valid configuration type for AWS Storage gateway?**
+* Gateway-accessed volumes
+
+**16. You have started a new role as a solutions architect for an architectural firm that designs large sky scrapers in the Middle East. Your company hosts large volumes of data and has about 250Tb of data on internal servers. They have decided to store this data on S3 due to the redundancy offered by it. The company currently has a telecoms line of 2Mbps connecting their head office to the internet. What method should they use to import this data on to S3 in the fastest manner possible?**
+* AWS Import/Export
+
+**17. You are designing a site for a new start up which generates cartoon images for people automatically. Customers will log on to the site, upload an image which is stored in S3. The application then passes a job to AWS SQS and a fleet of EC2 instances poll the queue to receive new processing jobs. These EC2 instances will then turn the picture in to a cartoon and will then need to store the processed job somewhere. Users will typically download the image once (immediately), and then never download the image again. What is the most commercially feasible method to store the processed images?**
+* Store the images on S3 RRS, and create a lifecycle policy to delete the image after 24 hours
+
+**18. You are hosting a website in Ireland called aloud.guru and you decide to have a static DR site available on S3 in the event that your primary site would go down. Your bucket name is also called “acloudguru”. What would be the S3 URL of the static website?**
+* https://acloudguru.s3-website-eu-west-1.amazonaws.com
+
+**19. Which of the following is NOT a valid SNS subscribers?**
+* SWF
+
+**20. You are appointed as your company's Chief Security Officer and you want to be able to track all changes made to your AWS environment, by all users and at all times, in all regions. What AWS service should you use to achieve this?**
+* CloudTrail
