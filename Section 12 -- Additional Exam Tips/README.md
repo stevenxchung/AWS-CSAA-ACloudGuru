@@ -58,12 +58,12 @@ This section will cover additional exam tips from previous sections.
 * Very easy to track charges and allocate costs
 * Volume pricing discount
 
-### AWS Ogranizations and Consolidated Billing - Best Practices
+### AWS Organizations and Consolidated Billing - Best Practices
 * Always enable multi-factor authentication on root account
 * Always use a strong and complex password on root account
 * Pay account should be used for billing purposes only. Do not deploy resources in to paying account
 
-### AWS Ogranizations and Consolidated Billing - Notes
+### AWS Organizations and Consolidated Billing - Notes
 * Linked accounts
     * 20 linked accounts only
 * Billing alerts
@@ -76,7 +76,7 @@ This section will cover additional exam tips from previous sections.
         2. Create a bucket policy that allows cross account access
         3. Turn on CloudTrail in the other accounts and use the bucket in the paying account
 
-### AWS Ogranizations and Consolidated Billing - Exam Tips
+### AWS Organizations and Consolidated Billing - Exam Tips
 * Consolidated billing allows you to get volume discounts on all your accounts
 * Unused reserved instances for EC2 are applied across the group
 * CloudTrail is on a per account and per region basis but can be aggregated into a single bucket in the paying account
@@ -92,8 +92,8 @@ Cross account access makes it easier for you to work productively within a multi
 ### What are Tags?
 * Key value pairs attached to AWS resources
 * Metadata (data about data)
-* Tags can sometiems be inherited
-    * Autoscaling, CloudFormation, and Elastic Beanstalk can create other resources
+* Tags can sometimes be inherited
+    * Auto scaling, CloudFormation, and Elastic Beanstalk can create other resources
 
 ### What are resource groups?
 * Resource groups make it easy to group your resources using the tags that are assigned to them
@@ -104,7 +104,7 @@ Cross account access makes it easier for you to work productively within a multi
 * Specific information
     * For EC2 - Public and private IP addresses
     * For ELB - Port configurations
-    * For RDS - Database eengine etc
+    * For RDS - Database engine etc
 
 ### AWS Resource Groups
 There are two types of AWS resource groups:
@@ -129,7 +129,7 @@ AWS Direct Connect makes it easy to establish a dedicated network connection fro
 * Reduce costs when using large volumes of traffic
 
 ### How is Direct Connect different from a VPN?
-* VPN connections can be configured in minuites and are a good solution if you have an immediate need, have low to modest bandwidth requirements, and can tolerate the inherent variability in internet-based connectivity
+* VPN connections can be configured in minutes and are a good solution if you have an immediate need, have low to modest bandwidth requirements, and can tolerate the inherent variability in internet-based connectivity
 * AWS Direct Connect does not involve the internet; instead, it uses dedicated, private network connections between your intranet and Amazon VPC
 
 ### Direct Connect Connections
@@ -137,7 +137,7 @@ AWS Direct Connect makes it easy to establish a dedicated network connection fro
     * 1 Gbps
     * 10 Gbps
 * Sub 1 Gbps can be purchased through AWS direct connect partners
-* Uses ethernet VLAN trunking (802.1Q)
+* Uses Ethernet VLAN trunking (802.1Q)
 
 ### Security Token Service (STS)
 * Grants users limited and temporary access to AWS resources. Users can come from three sources:
@@ -169,7 +169,7 @@ AWS Direct Connect makes it easy to establish a dedicated network connection fro
 * Can you authenticate with Active Directory?
     * Yes, using SAML
 * Which is done first, SAML to authenticate against Active Directory or Active Directory then SAML credentials?
-    * We always authenicate with Active Directory first then receive the SAML
+    * We always authenticate with Active Directory first then receive the SAML
 
 ### What is a Workspace?
 * A Workspace is a cloud-based replacement for a traditional desktop.
@@ -192,13 +192,13 @@ AWS Direct Connect makes it easy to establish a dedicated network connection fro
 * Traditional virtualization has density compromises
 * Docker achieves higher density, improved portability by removing the per container Guest OS
 
-### Containization Benefits
+### Containerization Benefits
 * Escape from dependency hell
 * Consistent progression from Dev -> Test -> QA -> Prod
 * Isolation - performance or stability issues with App A in container A, will not impact App B in container B
-* Much better resource managemnet
+* Much better resource management
 * Extreme code portability
-* Mircoservices
+* Micro services
 
 ### Docker Components
 * Docker image
@@ -214,7 +214,7 @@ AWS Direct Connect makes it easy to establish a dedicated network connection fro
 
 * ECS is a regional service that you can use in one or more AZs across a new, or existing VPC to schedule the placement of containers across your cluster based on your resource needs, isolation policies, and availability requirements
 * AWS ECS eliminates the need for you to operate your own cluster management and configuration management systems, or to worry about scaling your management infrastructure
-* ECS can also be used to create a consistent deployment and build experience, manage and scale batch and ETL workloads, and build sophisticated application architectures on a microservices model
+* ECS can also be used to create a consistent deployment and build experience, manage and scale batch and ETL workloads, and build sophisticated application architectures on a micro services model
 
 ### About Containers
 * Containers are a method of operating system virtualization that allows you to run an application and its dependencies in resource-isolated processes
@@ -225,15 +225,15 @@ AWS Direct Connect makes it easy to establish a dedicated network connection fro
 * An image is a read-only template with instructions for creating a Docker container. It contains:
     * An ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime
 * An image is create from a Dockerfile, a plain text file that specifies the components that are to be included in the container
-* Images are stored in a registry, such as DockerHub or AWS ECR
+* Images are stored in a registry, such as Docker Hub or AWS ECR
 
 ### Container Registries
-AWS ECR (EC2 Container Registry) is a managed AWS Docker registry service that is sercure, scalable, and reliable. ECR supports private Docker respositories with resource-based permissions using AWS IAM so that specific users or EC2 instances and access repositories and images. Developers can use the Docker CLI to push, pull, and manage images.
+AWS ECR (EC2 Container Registry) is a managed AWS Docker registry service that is secure, scalable, and reliable. ECR supports private Docker repositories with resource-based permissions using AWS IAM so that specific users or EC2 instances and access repositories and images. Developers can use the Docker CLI to push, pull, and manage images.
 
 ### ECS Task Definitions
 * A Task Definition is required to run Docker containers in ECS
 * Task Definitions are text files in JSON format that describe one or more containers that form your application
-* Some of the parameters you can specify in a task defintion include:
+* Some of the parameters you can specify in a task definition include:
     * Which Docker images to use with the containers in your task
     * How much CPU and memory to use with each container
     * Whether containers are linked together in a task
@@ -296,14 +296,14 @@ AWS ECR (EC2 Container Registry) is a managed AWS Docker registry service that i
 * Containers are a method of operating system virtualization that allows you to run an app and its dependencies in resource-isolated processes
 * Containers are created from a read-only template called an Image
 * An Image is a read-only template with instructions for creating a Docker container
-* Images are stored in a Registry, such as DockerHub or AWS ECR
+* Images are stored in a Registry, such as Docker Hub or AWS ECR
 * ECR is a managed AWS Docker registry service
 
 ### ECS - Exam Tips Continued...
 * A Task Definition is required to run Docker containers in ECS
 * Task Definitions are text files in JSON format that describe one or more containers that form your app
 * Think of a Task Definition as a cloud formation template but for Docker
-* ECS service allows you to run and maintain a specified number of instances of a task defintion simultaneously in an ECS cluster
+* ECS service allows you to run and maintain a specified number of instances of a task definition simultaneously in an ECS cluster
 * Think of services like auto scaling groups for ECS
 * ECS clusters are a logical grouping of container instances that you can place tasks on
 
@@ -320,7 +320,7 @@ AWS ECR (EC2 Container Registry) is a managed AWS Docker registry service that i
 * Security groups operate at the instance level not at the task or container level
 
 ## Section 12 Quiz
-**1. You are a solutions architect working for a company that specialises in ingesting large data feeds (using Kinesis) and then analysing these feeds using Elastic Map Reduce (EMR). The results are then stored on a custom MySQL database which is hosted on an EC2 instance which has 3 volumes, the root/boot volume, and then 2 additional volumes which are striped into a RAID-0 set. Your company recently had an outage and lost some key data and have since decided that they will need to run nightly back ups. Your application is only used during office hours, so you can afford to have some down time in the middle of the night if required. You decide to take a snapshot of all three volumes every 24 hours. In what manner should you do this?**
+**1. You are a solutions architect working for a company that specializes in ingesting large data feeds (using Kinesis) and then analyzing these feeds using Elastic Map Reduce (EMR). The results are then stored on a custom MySQL database which is hosted on an EC2 instance which has 3 volumes, the root/boot volume, and then 2 additional volumes which are striped into a RAID-0 set. Your company recently had an outage and lost some key data and have since decided that they will need to run nightly backups. Your application is only used during office hours, so you can afford to have some down time in the middle of the night if required. You decide to take a snapshot of all three volumes every 24 hours. In what manner should you do this?**
 * Stop the EC2 instance and take a snapshot of each EC2 instance independently. Once the snapshots are complete, start the EC2 instance and ensure that all relevant volumes are remounted
 
 **2. What are the valid methodologies for encrypting data on S3?**
@@ -336,7 +336,7 @@ AWS ECR (EC2 Container Registry) is a managed AWS Docker registry service that i
 * Generate a password for each user created and give these passwords to your system administrators
 
 **6. Amazon S3 buckets in all Regions provide which of the following?**
-* Read-after-write consistency for PUTS of new objects AND Eventually consistent for overwrite PUTS & DELETES
+* Read-after-write consistency for PUTS of new objects AND eventually consistent for overwrite PUTS & DELETES
 
 **7. What function of an AWS VPC is stateless?**
 * Network Access Control Lists
@@ -347,7 +347,7 @@ AWS ECR (EC2 Container Registry) is a managed AWS Docker registry service that i
 **9. When trying to grant an amazon account access to S3 using access control lists what method of identification should you use to identify that account with?**
 * The email address of the account or the canonical user ID
 
-**10. You are a solutions architect working for a large oil and gas company. Your company runs their production environment on AWS and has a custom VPC. The VPC contains 3 subnets, 1 of which is public and the other 2 are private. Inside the public subnet is a fleet of EC2 instances which are the result of an autoscaling group. All EC2 instances are in the same security group. Your company has created a new custom application which connects to mobile devices using a custom port. This application has been rolled out to production and you need to open this port globally to the internet. What steps should you take to do this, and how quickly will the change occur?**
+**10. You are a solutions architect working for a large oil and gas company. Your company runs their production environment on AWS and has a custom VPC. The VPC contains 3 subnets, 1 of which is public and the other 2 are private. Inside the public subnet is a fleet of EC2 instances which are the result of an auto scaling group. All EC2 instances are in the same security group. Your company has created a new custom application which connects to mobile devices using a custom port. This application has been rolled out to production and you need to open this port globally to the internet. What steps should you take to do this, and how quickly will the change occur?**
 * Open the port on the existing security group. Your EC2 instances will be able to communicate over this port immediately
 
 **11. Which of the following is not supported by AWS Import/Export?**
@@ -356,7 +356,7 @@ AWS ECR (EC2 Container Registry) is a managed AWS Docker registry service that i
 **12. Which of the following is not a service of the security category of the AWS trusted advisor service?**
 * Vulnerability scans on existing VPCs
 
-**13. You work for a market analysis firm who are designing a new environment. They will ingest large amounts of market data via Kinesis and then analyse this data using Elastic Map Reduce. The data is then imported in to a high performance NoSQL Cassandra database which will run on EC2 and then be accessed by traders from around the world. The database volume itself will sit on 2 EBS volumes that will be grouped into a RAID 0 volume. They are expecting very high demand during peak times, with an IOPS performance level of approximately 15,000. Which EBS volume should you recommend?**
+**13. You work for a market analysis firm who are designing a new environment. They will ingest large amounts of market data via Kinesis and then analyze this data using Elastic Map Reduce. The data is then imported in to a high performance NoSQL Cassandra database which will run on EC2 and then be accessed by traders from around the world. The database volume itself will sit on 2 EBS volumes that will be grouped into a RAID 0 volume. They are expecting very high demand during peak times, with an IOPS performance level of approximately 15,000. Which EBS volume should you recommend?**
 * Provisioned IOPS (PIOPS)
 
 **14. What are the different types of virtualization available on EC2?**
