@@ -320,6 +320,7 @@ AWS ECR (EC2 Container Registry) is a managed AWS Docker registry service that i
 * Security groups operate at the instance level not at the task or container level
 
 ## Section 12 Quiz
+
 **1. You are a solutions architect working for a company that specializes in ingesting large data feeds (using Kinesis) and then analyzing these feeds using Elastic Map Reduce (EMR). The results are then stored on a custom MySQL database which is hosted on an EC2 instance which has 3 volumes, the root/boot volume, and then 2 additional volumes which are striped into a RAID-0 set. Your company recently had an outage and lost some key data and have since decided that they will need to run nightly backups. Your application is only used during office hours, so you can afford to have some down time in the middle of the night if required. You decide to take a snapshot of all three volumes every 24 hours. In what manner should you do this?**
 * Stop the EC2 instance and take a snapshot of each EC2 instance independently. Once the snapshots are complete, start the EC2 instance and ensure that all relevant volumes are remounted
 
