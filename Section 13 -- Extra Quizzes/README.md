@@ -221,3 +221,33 @@
 
 **30. AWS help provide protection against some forms of traditional network attacks. Which of the following is not protected against by AWS?**
 * Social Engineering
+
+**31. Placement Groups can be created across 2 or more Availability Zones.**
+* False, Placement Groups are restricted to a single Availability Zone
+
+**32. You have three AWS accounts (A, B & C) which share data.  In an attempt to maximize performance between the accounts, you deploy the instances owned by these three accounts in "eu-west-1b".  During testing, you find inconsistent results in transfer latency between the instances. Transfer between accounts A and B is excellent, but transfers between accounts B and C, and C and A, are slower.  What could be the problem ?**
+* The names of the AZs are randomly applied, so 'eu-west-1b' is not necessarily the same physical location for all three accounts
+
+**33. Your company has hired a young and enthusiastic accountant. After reviewing the AWS documentation and usage graphs, he announces that you are wasting vast amounts of money running servers for a full hour instead of spinning them up only when they are needed and down again as soon as they are idle for 1 minute. He cites the AWS claim that you only pay for what you use, and that as a senior engineer, you should be more conscious of wasting company money.  How do you respond?**
+* You thank him for his concern, and advise him that he has misinterpreted the pricing document: Instances are billed by the full hour, and partial hours are billed as such.  Additionally, storage charges are incurred even if the Db instance sits idle. Taking into account productivity losses, stopping and restarting Db instances may actually result in additional costs. As such, your solution is fine as it now stands.
+
+**34. Your company is moving their 10TB data warehouse to the cloud. Taking into account your company's 100Mbps connection, which service would most quickly get your data into AWS?**
+* Amazon Snowball
+
+**35. You have been monitoring a sensitive autoscaling group, and you expect it to scale-in as you enter a period of holiday downtime. The auto scaling group is distributed over three AZs ( AZ - A & -B have two instances each, and AZ -C has three instances). All instances have different CPU and Memory utilization, and all instances have been running for a different number of days. All instances come from different versions of a root AMI, and all instances have different numbers of sessions connected. Which instance will be the 1st to shut down?**
+* The instance in AZ -C that has the oldest launch configuration will terminate first,  AutoScaling scales-in according to a hierarchy of decisions. Please see the link for further details: http://amzn.to/2lSm9k6
+
+**36. Auto Scaling is a tool used to create fault-tolerant and cost-effective architectures.**
+* True, auto scaling improves availability and will keep your infrastructure at the size needed to run your application
+
+**37. What is the maximum Visibility Timeout of an SQS message in a FIFO queue?**
+* 12 hours
+
+**38. A client who is using EC2 believes that someone other than approved administrators is trying to gain access to her Linux web app instances, and she asks what sort of network access logging can be added to the system. Which of the following might you recommend?**
+* Make use of an OS level logging tools such as iptables and log events to CloudWatch or S3
+
+**39. Your company likes the idea of storing files on AWS. However, low-latency service of the last few days of files is important to customer service. Which Storage Gateway configuration would you use to achieve both of these ends?**
+* Gateway-Cached volumes - retain a copy of frequently accessed data subsets locally. Cached volumes offer a substantial cost savings on primary storage and minimize the need to scale your storage on-premises
+
+**40. You have a MySQL database running on an EC2 instance in a private subnet. You can connect via SSH, but you are unable to apply updates to the database server via the NAT instance. What might you do to remedy this problem?**
+* Ensure that "Source/Destination Checks" is disabled on the NAT instance
