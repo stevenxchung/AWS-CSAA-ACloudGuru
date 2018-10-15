@@ -261,4 +261,4 @@ Amazon Aurora is a MySQL-compatible, relational database engine that combines th
 * Redis and Memcached
 
 **10. By default, the maximum provisioned IOPS capacity on an Oracle and MySQL RDS instance (using provisioned IOPS) is 30,000 IOPS.**
-* Limits change over time
+* False, limits change over time
