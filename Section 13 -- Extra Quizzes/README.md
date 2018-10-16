@@ -281,3 +281,33 @@
 
 **50. You are developing a web application, and you are maintaining separate sets of resources for your alpha, beta, and release environments. Each version runs on Amazon EC2 with an EBS volume. You use Elastic Load Balancing to manage traffic and Amazon Route 53 to manage your domain. What's the best way to check the health and status of all three groups of services simultaneously?**
 * Create a resource group containing each set of resources and view all three environments from a single, group dashboard
+
+**51. Your company has just purchased another company. As part of the merger, your team has been instructed to cross connect the corporate networks. You run all your confidential corporate services and Internal DNS in a VPC. The merged company has all their confidential corporate services and Internal DNS on-premises. After establishing a Direct-Connect service between your VPC and their on-premise network, and confirming all the routing, firewalls, and authentication, you find that while you can resolve names against their DNS, the other company services is unable to resolve names against your DNS servers. Why might this be?**
+* By design, AWS DNS does not respond to requests originating from outside the VPC
+
+**52. How is the Public IP address managed in an instance session via the instance GUI/RDP or Terminal/SSH session?**
+* The Public IP address is not managed on the instance: It is, instead, an alias applied as a network address translation of the Private IP address
+
+**53. You have been engaged by a company to design and lead a migration to an AWS environment. The team is concerned about the capabilities of the new environment, especially when it comes to avoiding bottlenecks. The design calls for about 20 instances (C3.2xLarge) pulling jobs/messages from SQS. Network traffic per instance is estimated to be around 500 Mbps at the beginning and end of each job. Which network configuration should you plan on deploying?**
+* Spread the Instances over multiple AZs to minimize the traffic concentration and maximise the fault tolerance
+
+**54. You are a consultant planning to deploy DynamoDB across three AZs. Your lead DBA is concerned about data consistency. Which of the following do you advise the lead DBA to do?**
+* To ask the development team to code for strongly consistent reads. As the consultant, you will advise the CTO of the increased cost
+
+**55. You successfully configure VPC Peering between VPC-A and VPC-B. You then establish an IGW and a Direct-Connect connection in VPC-B. Can instances in VPC-A connect to your corporate office via the Direct-Connect service, and connect to the Internet via the IGW?**
+* VPC peering does not support edge to edge routing
+
+**56. You are reviewing Change Control requests, and you note that there is a change designed to reduce wasted CPU cycles by increasing the value of Visibility Timeout attribute. What does this mean?**
+* When a consumer instance retrieves a message, that message will be hidden from other consumer instances for a fixed period
+
+**57. You manage a Ruby on Rails application that lives on a cluster of EC2 instances. Your website occasionally experiences brief, strong, and entirely unpredictable spikes in traffic that overwhelm your EC2 instances’ resources and freeze the application. As a result, you're losing recently submitted requests from end users. You use Auto Scaling to deploy additional resources to handle the load during spikes, but the new instances don't spin-up fast enough to prevent the existing application servers from freezing. Which of the following will provide the most cost-effective solution in preventing the loss of recently submitted requests?**
+* Use Amazon SQS to decouple the application components and keep the requests in queue until the extra Auto-Scaling instances are available. Neither increasing the size of your EC2 instances nor maintaining additional EC2 instances is cost-effective, and pre-warming an ELB signifies that these spikes in traffic are predictable. The cost-effective solution to the unpredictable spike in traffic is to use SQS to decouple the application components
+
+**58. You're building out a single-region application in us-west-2. However, disaster recovery is a strong consideration, and you need to build the application so that if us-west-2 becomes unavailable, you can fail-over to us-west-1. Your application relies exclusively on pre-built AMI's. In order to share those AMI's with the region you're using as a backup, which process would you follow?**
+* Copy the AMI from us-west-2, manually apply launch permissions, user-defined tags, and Amazon S3 bucket permissions of the default AMI to the new instance, and launch the instance. AWS does not copy launch permissions, user-defined tags, or Amazon S3 bucket permissions from the source AMI to the new AMI
+
+**59. At the monthly product meeting, one of the Product Owners proposes an idea to address an immediate shortcoming of the product system: storing a copy of the customer price schedule in the customer record in the database. You know that you can store large text or binary objects in DynamoDB. You give a tentative OK to do a Minimal Viable Product test, but stipulate that it must comply with the size limitation on the Attribute Name & Value. Which is the correct limitation?**
+* The Name must not exceed 64 KB and the Value must not exceed 255 KB
+
+**60. To save money, you quickly stored some data on the root volume of an EC2 instance and shut it down for the weekend. When you returned on Monday and restarted your instance, you discovered that your data was gone. Why might that be?**
+* The root volume was ephemeral, block-level storage. Data on an instance store volume is lost if an instance terminates. The most likely answer is that the EC2 instance was backed by an instance store volume. Instance store volumes are ephemeral, meaning that they exist ONLY in conjunction with their accompanying EC2 instance.
