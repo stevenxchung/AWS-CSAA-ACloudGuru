@@ -101,7 +101,7 @@
 * Immediately
 
 **11. You are a solutions architect working for a biotech company who is pioneering research in immunotherapy. They have developed a new cancer treatment that may be able to cure up to 94% of cancers. They store their research data on S3, however recently an intern accidentally deleted some critical files. You've been asked to prevent this from happening in the future. What options below can prevent this?**
-* Enable S3 versioning on the bucket & enable Enable Multifactor Authentication (MFA) on the bucket
+* Enable S3 versioning on the bucket & enable Multifactor Authentication (MFA) on the bucket
 
 **12. You run an automobile reselling company that has a popular online store on AWS. The application sits behind an Auto Scaling group and requires new instances of the Auto Scaling group to identify their public and private IP addresses. How can you achieve this?**
 * Using a Curl or Get Command to get the latest meta-data from http://169.254.169.254/latest/meta-data/
@@ -135,7 +135,7 @@
 **1. You are a solutions architect working for a large pharmaceutical company who are involved in high performance computing to develop new drugs to treat arthritis. You are helping them to design a new application which will need to keep network traffic the lowest latency possible while leveraging very high CPU performance. They would like to place this solution on to the AWS platform and are looking for your recommendations. Which of the following do you suggest?**
 * CPU optimized EC2 instances deployed into placement groups
 
-**2. You work for a automotive company which is migrating their production environment in to AWS. The company has 4 separate segments, Dev, Test, UAT & Production. They require each segment to be logically isolated from each other. What VPC configuration should you recommend?**
+**2. You work for an automotive company which is migrating their production environment in to AWS. The company has 4 separate segments, Dev, Test, UAT & Production. They require each segment to be logically isolated from each other. What VPC configuration should you recommend?**
 * A separate VPC for each segment. Then create VPN tunnels from your HQ to each VPC so the appropriate teams can each speak to their dedicated VPC
 
 **3. By default how many VPCs can you have per region in your AWS account?**
@@ -144,19 +144,19 @@
 **4. Which of the following is not associated with Identity Access Management Service?**
 * Workspaces
 
-**5. You are designing a new application for a financial company that will utilize spot EC2 instances as and when they meet a certain price point. These EC2 instances will analyse data and the output their analysis to the root volume. You need to store this data in a persistent form of storage so that if the spot instances are terminated by Amazon, you will not lose your data. You need to choose the lowest cost service. Where should you store your data?**
+**5. You are designing a new application for a financial company that will utilize spot EC2 instances as and when they meet a certain price point. These EC2 instances will analyze data and the output their analysis to the root volume. You need to store this data in a persistent form of storage so that if the spot instances are terminated by Amazon, you will not lose your data. You need to choose the lowest cost service. Where should you store your data?**
 * S3
 
 **6. Which of the following is not a responsibility of Amazon’s under the shared responsibility model?**
 * OS level patching for EC2
 
-**7. In regards to EC2 which of the following is not a customers responsibility under the shared responsibility model?**
+**7. In regards to EC2 which of the following is not a customer’s responsibility under the shared responsibility model?**
 * Decommissioning and destruction of storage media
 
 **8. Which of the following is true when writing to S3?**
 * All regions provide read-after-write consistency for PUTS of new objects in your Amazon S3 bucket and eventual consistency for overwrite PUTS and DELETES
 
-**9. You are solutions architect working for a busy ecommerce store. Due to your organisations unique security requirements, you decide to utilize EC2 running a MySQL database, rather than using RDS. You need to architect this EC2 instance to maximise your disk IO. Which of the following would give you the best disk performance?**
+**9. You are solutions architect working for a busy ecommerce store. Due to your organizations unique security requirements, you decide to utilize EC2 running a MySQL database, rather than using RDS. You need to architect this EC2 instance to maximize your disk IO. Which of the following would give you the best disk performance?**
 * Add 2 x additional PIOPS SSD volumes and create a RAID 0. Install MySQL to this RAID 0 partition
 
 **10. Which of the following services do you get OS level access to?**
@@ -180,7 +180,7 @@
 **16. You are designing a web application for a new social media start up and have recommended using DynamoDB for the database due to its superior performance. You need to ensure that your database has redundancy. What additional steps should you do?**
 * Nothing, DynamoDB all data is automatically replicated across multiple availability zones
 
-**17. What blocksize does Redshift use when storing it’s data in columnar storage?**
+**17. What block size does Redshift use when storing its data in columnar storage?**
 * 1024 KB
 
 **18. You are designing an application for a furniture retailer. A component of the application takes pictures of the furniture for sale and generates thumb nail images which then need to be stored persistently. The business can tolerate it if some images are lost as they can be regenerated. The thumbnails will need to be retrieved immediately when the application requests them. What is the cheapest option to do this?**
@@ -189,10 +189,10 @@
 **19. You run a website which hosts videos and you have two types of members, premium fee paying members and free members. All videos uploaded by both your premium members and free members are processed by a fleet of EC2 instances which will poll SQS as videos are uploaded. However you need to ensure that your premium fee paying members videos have a higher priority than your free members. How should you design your application.**
 * Create two SQS queues, one for premium members and one for free members. Program your EC2 fleet to poll the premium queue first and if empty, to then poll your free members SQS queue
 
-**20. You are designing an image sharing website that will distribute images across the world. You need maximise performance so that your end users can download frequently accessed images as fast as possible. What AWS technology should you implement?**
+**20. You are designing an image sharing website that will distribute images across the world. You need to maximize performance so that your end users can download frequently accessed images as fast as possible. What AWS technology should you implement?**
 * CloudFront
 
-**21. You are putting together a wordpress site for a local charity and you are using a combination of Route 53, Elastic Load Balancers, EC2 & RDS. You launch your EC2 instance, download wordpress and setup the configuration files connection string so that it can communicate to RDS. When you browse to your URL however, nothing happens. Which of the following could NOT be the cause of this?**
+**21. You are putting together a WordPress site for a local charity and you are using a combination of Route 53, Elastic Load Balancers, EC2 & RDS. You launch your EC2 instance, download WordPress and setup the configuration files connection string so that it can communicate to RDS. When you browse to your URL however, nothing happens. Which of the following could NOT be the cause of this?**
 * You have locked port 22 down to your specific IP address therefore users cannot access your site using HTTP/HTTPS
 
 **22. You have uploaded a file to S3, what HTTP code would indicate that the upload was successful?**
@@ -225,17 +225,17 @@
 **31. Placement Groups can be created across 2 or more Availability Zones.**
 * False, Placement Groups are restricted to a single Availability Zone
 
-**32. You have three AWS accounts (A, B & C) which share data.  In an attempt to maximize performance between the accounts, you deploy the instances owned by these three accounts in "eu-west-1b".  During testing, you find inconsistent results in transfer latency between the instances. Transfer between accounts A and B is excellent, but transfers between accounts B and C, and C and A, are slower.  What could be the problem ?**
+**32. You have three AWS accounts (A, B & C) which share data.  In an attempt to maximize performance between the accounts, you deploy the instances owned by these three accounts in "eu-west-1b".  During testing, you find inconsistent results in transfer latency between the instances. Transfer between accounts A and B is excellent, but transfers between accounts B and C, and C and A, are slower. What could be the problem?**
 * The names of the AZs are randomly applied, so 'eu-west-1b' is not necessarily the same physical location for all three accounts
 
-**33. Your company has hired a young and enthusiastic accountant. After reviewing the AWS documentation and usage graphs, he announces that you are wasting vast amounts of money running servers for a full hour instead of spinning them up only when they are needed and down again as soon as they are idle for 1 minute. He cites the AWS claim that you only pay for what you use, and that as a senior engineer, you should be more conscious of wasting company money.  How do you respond?**
+**33. Your company has hired a young and enthusiastic accountant. After reviewing the AWS documentation and usage graphs, he announces that you are wasting vast amounts of money running servers for a full hour instead of spinning them up only when they are needed and down again as soon as they are idle for 1 minute. He cites the AWS claim that you only pay for what you use, and that as a senior engineer, you should be more conscious of wasting company money. How do you respond?**
 * You thank him for his concern, and advise him that he has misinterpreted the pricing document: Instances are billed by the full hour, and partial hours are billed as such.  Additionally, storage charges are incurred even if the Db instance sits idle. Taking into account productivity losses, stopping and restarting Db instances may actually result in additional costs. As such, your solution is fine as it now stands.
 
 **34. Your company is moving their 10TB data warehouse to the cloud. Taking into account your company's 100Mbps connection, which service would most quickly get your data into AWS?**
 * Amazon Snowball
 
-**35. You have been monitoring a sensitive autoscaling group, and you expect it to scale-in as you enter a period of holiday downtime. The auto scaling group is distributed over three AZs ( AZ - A & -B have two instances each, and AZ -C has three instances). All instances have different CPU and Memory utilization, and all instances have been running for a different number of days. All instances come from different versions of a root AMI, and all instances have different numbers of sessions connected. Which instance will be the 1st to shut down?**
-* The instance in AZ -C that has the oldest launch configuration will terminate first,  AutoScaling scales-in according to a hierarchy of decisions. Please see the link for further details: http://amzn.to/2lSm9k6
+**35. You have been monitoring a sensitive auto scaling group, and you expect it to scale-in as you enter a period of holiday downtime. The auto scaling group is distributed over three AZs (AZ - A & -B have two instances each, and AZ -C has three instances). All instances have different CPU and Memory utilization, and all instances have been running for a different number of days. All instances come from different versions of a root AMI, and all instances have different numbers of sessions connected. Which instance will be the 1st to shut down?**
+* The instance in AZ -C that has the oldest launch configuration will terminate first, Auto Scaling scales-in according to a hierarchy of decisions. Please see the link for further details: http://amzn.to/2lSm9k6
 
 **36. Auto Scaling is a tool used to create fault-tolerant and cost-effective architectures.**
 * True, auto scaling improves availability and will keep your infrastructure at the size needed to run your application
@@ -244,7 +244,7 @@
 * 12 hours
 
 **38. A client who is using EC2 believes that someone other than approved administrators is trying to gain access to her Linux web app instances, and she asks what sort of network access logging can be added to the system. Which of the following might you recommend?**
-* Make use of an OS level logging tools such as iptables and log events to CloudWatch or S3
+* Make use of an OS level logging tools such as IP tables and log events to CloudWatch or S3
 
 **39. Your company likes the idea of storing files on AWS. However, low-latency service of the last few days of files is important to customer service. Which Storage Gateway configuration would you use to achieve both of these ends?**
 * Gateway-Cached volumes - retain a copy of frequently accessed data subsets locally. Cached volumes offer a substantial cost savings on primary storage and minimize the need to scale your storage on-premises
@@ -261,7 +261,7 @@
 **43. Your company provides an online image recognition service and uses SQS to decouple system components. Your EC2 instances poll the image queue as often as possible to keep end-to-end throughput as high as possible, but you realize that all this polling is resulting in both a large number of CPU cycles and skyrocketing costs. How can you reduce cost without compromising service?**
 * Enable long polling by setting the ReceiveMessageWaitTimeSeconds to a number > 0.  SQS long polling doesn’t return a response until a message arrives in the queue, reducing your overall cost over time. Short polling WILL return empty responses
 
-**44. You need to store some easily-replaceable objects on S3. With quick retrieval times and and cost effectiveness in mind, which S3 storage class should you consider.**
+**44. You need to store some easily-replaceable objects on S3. With quick retrieval times and cost effectiveness in mind, which S3 storage class should you consider.**
 * S3 - RRS, you should use S3 - RRS. You want to minimize your retrieval time, so you should not use Glacier (and there is no such thing as S3 - Provisioned IOPS)
 
 **45. You are a solutions architect working for a busy media company with offices in Japan and the United States. Your production environment is hosted both in US-EAST-1 and AP-NORTHEAST-1. Your European users have been connecting to the production environment in Japan, and are seeing the site in Japanese rather than in English. You need to ensure that they view the English language version. Which of the routing policies below could help you achieve this?**
@@ -270,10 +270,10 @@
 **46. Although your application customarily runs at 30% usage, you have identified a recurring usage spike (>90%) between 8pm and midnight daily. What is the most cost effective way to scale your application to meet this increased need?**
 * Use Proactive Cyclic Scaling to boost your capacity at a fixed interval
 
-**47. You work for a popular media outlet about to release a story that is expected to go viral. During load testing on the website, you discover that there is read contention on the database tier of your application. Your RDS instance consists of a MySQL database on an extra large instance. Which two of the following approaches would be best to further scale this instance to meet the anticipated increase in traffic your viral story will generate?**
-* Use Elasticache to cache the frequently read, static data
+**47. You work for a popular media outlet about to release a story that is expected to go viral. During load testing on the website, you discover that there is read contention on the database tier of your application. Your RDS instance consists of a MySQL database on an extra-large instance. Which two of the following approaches would be best to further scale this instance to meet the anticipated increase in traffic your viral story will generate?**
+* Use ElastiCache to cache the frequently read, static data
 
-**48. Following advice from your consultant, you have configured your VPC to use Dedicated hosting tenancy. A subsequent change to your application has rendered the performance gains from dedicated tenancy superfluous, and you would now like to recoup some of these greater costs. How do you revert to Default hosting tenancy?**
+**48. Following advice from your consultant, you have configured your VPC to use dedicated hosting tenancy. A subsequent change to your application has rendered the performance gains from dedicated tenancy superfluous, and you would now like to recoup some of these greater costs. How do you revert to Default hosting tenancy?**
 * Create AMIs of all your instances. Create a new VPC with Default as the hosting tenancy attribute, and use them to create new instances using Default tenancy
 
 **49. Which URL format does S3 support in pointing to bucket "mynewbucket"?**
@@ -282,14 +282,14 @@
 **50. You are developing a web application, and you are maintaining separate sets of resources for your alpha, beta, and release environments. Each version runs on Amazon EC2 with an EBS volume. You use Elastic Load Balancing to manage traffic and Amazon Route 53 to manage your domain. What's the best way to check the health and status of all three groups of services simultaneously?**
 * Create a resource group containing each set of resources and view all three environments from a single, group dashboard
 
-**51. Your company has just purchased another company. As part of the merger, your team has been instructed to cross connect the corporate networks. You run all your confidential corporate services and Internal DNS in a VPC. The merged company has all their confidential corporate services and Internal DNS on-premises. After establishing a Direct-Connect service between your VPC and their on-premise network, and confirming all the routing, firewalls, and authentication, you find that while you can resolve names against their DNS, the other company services is unable to resolve names against your DNS servers. Why might this be?**
+**51. Your company has just purchased another company. As part of the merger, your team has been instructed to cross connect the corporate networks. You run all your confidential corporate services and Internal DNS in a VPC. The merged company has all their confidential corporate services and Internal DNS on-premises. After establishing a Direct-Connect service between your VPC and their on premise network, and confirming all the routing, firewalls, and authentication, you find that while you can resolve names against their DNS, the other company services is unable to resolve names against your DNS servers. Why might this be?**
 * By design, AWS DNS does not respond to requests originating from outside the VPC
 
 **52. How is the Public IP address managed in an instance session via the instance GUI/RDP or Terminal/SSH session?**
 * The Public IP address is not managed on the instance: It is, instead, an alias applied as a network address translation of the Private IP address
 
 **53. You have been engaged by a company to design and lead a migration to an AWS environment. The team is concerned about the capabilities of the new environment, especially when it comes to avoiding bottlenecks. The design calls for about 20 instances (C3.2xLarge) pulling jobs/messages from SQS. Network traffic per instance is estimated to be around 500 Mbps at the beginning and end of each job. Which network configuration should you plan on deploying?**
-* Spread the Instances over multiple AZs to minimize the traffic concentration and maximise the fault tolerance
+* Spread the Instances over multiple AZs to minimize the traffic concentration and maximize the fault tolerance
 
 **54. You are a consultant planning to deploy DynamoDB across three AZs. Your lead DBA is concerned about data consistency. Which of the following do you advise the lead DBA to do?**
 * To ask the development team to code for strongly consistent reads. As the consultant, you will advise the CTO of the increased cost
