@@ -251,3 +251,33 @@
 
 **40. You have a MySQL database running on an EC2 instance in a private subnet. You can connect via SSH, but you are unable to apply updates to the database server via the NAT instance. What might you do to remedy this problem?**
 * Ensure that "Source/Destination Checks" is disabled on the NAT instance
+
+**41. Amazon SQS keeps track of all tasks and events in an application.**
+* False, with SQS, you must implement your own application-level tracking, especially if your application uses multiple queues
+
+**42. When editing permissions (policies and ACLs), to whom does the concept of the "Owner" refer?**
+* The "Owner" refers to the identity and email address used to create the account AWS account
+
+**43. Your company provides an online image recognition service and uses SQS to decouple system components. Your EC2 instances poll the image queue as often as possible to keep end-to-end throughput as high as possible, but you realize that all this polling is resulting in both a large number of CPU cycles and skyrocketing costs. How can you reduce cost without compromising service?**
+* Enable long polling by setting the ReceiveMessageWaitTimeSeconds to a number > 0.  SQS long polling doesn’t return a response until a message arrives in the queue, reducing your overall cost over time. Short polling WILL return empty responses
+
+**44. You need to store some easily-replaceable objects on S3. With quick retrieval times and and cost effectiveness in mind, which S3 storage class should you consider.**
+* S3 - RRS, you should use S3 - RRS. You want to minimize your retrieval time, so you should not use Glacier (and there is no such thing as S3 - Provisioned IOPS)
+
+**45. You are a solutions architect working for a busy media company with offices in Japan and the United States. Your production environment is hosted both in US-EAST-1 and AP-NORTHEAST-1. Your European users have been connecting to the production environment in Japan, and are seeing the site in Japanese rather than in English. You need to ensure that they view the English language version. Which of the routing policies below could help you achieve this?**
+* Geolocation, the aim is to direct sessions to the host that will provide the correct language. Geolocation is the best option because it is deterministic. While latency-based routing will usually direct the client to the correct host, connectivity issues with the US Regions might direct traffic to AP. In this case, the word \"ensure\" is operative: users MUST connect to the English-language site. Watch the wording in the exam: a requirement may be presented very casually in the wording of the question. However, understanding that requirement is mandatory if you're going to arrive at the correct answer
+
+**46. Although your application customarily runs at 30% usage, you have identified a recurring usage spike (>90%) between 8pm and midnight daily. What is the most cost effective way to scale your application to meet this increased need?**
+* Use Proactive Cyclic Scaling to boost your capacity at a fixed interval
+
+**47. You work for a popular media outlet about to release a story that is expected to go viral. During load testing on the website, you discover that there is read contention on the database tier of your application. Your RDS instance consists of a MySQL database on an extra large instance. Which two of the following approaches would be best to further scale this instance to meet the anticipated increase in traffic your viral story will generate?**
+* Use Elasticache to cache the frequently read, static data
+
+**48. Following advice from your consultant, you have configured your VPC to use Dedicated hosting tenancy. A subsequent change to your application has rendered the performance gains from dedicated tenancy superfluous, and you would now like to recoup some of these greater costs. How do you revert to Default hosting tenancy?**
+* Create AMIs of all your instances. Create a new VPC with Default as the hosting tenancy attribute, and use them to create new instances using Default tenancy
+
+**49. Which URL format does S3 support in pointing to bucket "mynewbucket"?**
+* http://mynewbucket.s3-aws-region.amazonaws.com
+
+**50. You are developing a web application, and you are maintaining separate sets of resources for your alpha, beta, and release environments. Each version runs on Amazon EC2 with an EBS volume. You use Elastic Load Balancing to manage traffic and Amazon Route 53 to manage your domain. What's the best way to check the health and status of all three groups of services simultaneously?**
+* Create a resource group containing each set of resources and view all three environments from a single, group dashboard
